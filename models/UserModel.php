@@ -13,9 +13,16 @@ class UserModel extends DbModel
     public string $firstname = '';
     public string $lastname = '';
     public string $email =  '';
+    public string $phone = '';
+    public string $poste= '';
     public int $status = self::STATUS_INACTIVE;
+    public int $age = 0;
+    public string $country = '';
+    public string $city= '';
+    public string $postaleCode = '';
     public string $password = '';
     public string $confirmPassword = '';
+    public int $fk_role = 1;
 
 
     public function tableName(): string
@@ -33,10 +40,10 @@ class UserModel extends DbModel
     //     return parent::selectAll();
     // }
 
-    // public function findOne($where)
-    // {
-    //     return parent::findOne($where);
-    // }
+    public function findOne($where)
+    {
+        return parent::findOne($where);
+    }
 
     // public function delete($id)
     // {
@@ -48,12 +55,12 @@ class UserModel extends DbModel
     //     return parent::select($id);
     // }
 
-    // public function save()
-    // {
-    //     $this->status = self::STATUS_INACTIVE;
-    //     $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-    //     return parent::save();
-    // }
+    public function save()
+    {
+        // $this->status = self::STATUS_INACTIVE;
+        // $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        return parent::save();
+    }
 
     public function rules(): array
     {
@@ -70,7 +77,7 @@ class UserModel extends DbModel
 
     public function attributes(): array
     {
-        return ['firstname', 'lastname', 'email', 'password', 'status'];
+        return ['firstname', 'lastname', 'email', 'password', 'status', 'age', 'country', 'city', 'postaleCode', 'poste', 'phone'];
     }
 
 }

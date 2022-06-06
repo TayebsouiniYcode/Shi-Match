@@ -1,5 +1,6 @@
 <?php
 
+use app\controllers\AuthController;
 use app\controllers\HelperController;
 use app\core\Application;
 
@@ -19,7 +20,12 @@ $config = [
 $app = new Application(dirname(__DIR__), $config);
 
 $app->router->get('/', [HelperController::class, 'index']);
-    
+
+$app->router->get('/login', [AuthController::class, 'login']);
+$app->router->post('/login', [AuthController::class, 'login']);
+
+$app->router->get('/signup', [AuthController::class, 'signup']);
+$app->router->post('/signup', [AuthController::class, 'signup']);
 // $app->router->get('/login', [AuthController::class, 'login']);
 // $app->router->post('/login', [AuthController::class, 'login']);
 
