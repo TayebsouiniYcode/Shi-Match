@@ -8,11 +8,11 @@ use app\core\Request;
 use app\models\User;
 use app\models\LoginModel;
 
-class WelcomeController extends Controller
+class HelperController extends Controller
 {
     public function index(Request $request)
     {
-        return $this->render('welcomYoucode');
+        echo "test";
     }
     public function login(Request $request)
     {

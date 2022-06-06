@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-use app\controllers\SiteController;
+use app\controllers\HelperController;
 
 class Router
 {
@@ -34,7 +34,7 @@ class Router
 
         if ($callback === false)
         {
-            Application::$app->controller = new SiteController();
+            Application::$app->controller = new HelperController();
             $this->response->setStatusCode(404);
             return $this->renderView("_404");
         }
