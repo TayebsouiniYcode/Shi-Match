@@ -1,14 +1,14 @@
 <?php
 
 namespace app\models;
-
 use app\core\DbModel;
 
-class User extends DbModel
+class UserModel extends DbModel
 {
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 2;
+
     public int $id;
     public string $firstname = '';
     public string $lastname = '';
@@ -23,37 +23,37 @@ class User extends DbModel
         return 'users';
     }
 
-    public function updateUser()
-    {
-        return parent::update();
-    }
+    // public function updateUser()
+    // {
+    //     return parent::update();
+    // }
 
-    public function selectAll()
-    {
-        return parent::selectAll();
-    }
+    // public function selectAll()
+    // {
+    //     return parent::selectAll();
+    // }
 
     // public function findOne($where)
     // {
     //     return parent::findOne($where);
     // }
 
-    public function delete($id)
-    {
-        return parent::delete($id);
-    }
+    // public function delete($id)
+    // {
+    //     return parent::delete($id);
+    // }
 
-    public function select($id)
-    {
-        return parent::select($id);
-    }
+    // public function select($id)
+    // {
+    //     return parent::select($id);
+    // }
 
-    public function save()
-    {
-        $this->status = self::STATUS_INACTIVE;
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-        return parent::save();
-    }
+    // public function save()
+    // {
+    //     $this->status = self::STATUS_INACTIVE;
+    //     $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+    //     return parent::save();
+    // }
 
     public function rules(): array
     {
