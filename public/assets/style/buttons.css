@@ -11,3 +11,9 @@
     border-radius: 76px;
     color : #333;
 }
+
+.btn-google {
+    border-radius: 26.386px;
+    border: 1px solid black;
+    padding: 5px 20px;
+}

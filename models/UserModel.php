@@ -1,21 +1,28 @@
 <?php
 
 namespace app\models;
-
 use app\core\DbModel;
 
-class User extends DbModel
+class UserModel extends DbModel
 {
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 2;
+
     public int $id;
     public string $firstname = '';
     public string $lastname = '';
     public string $email =  '';
+    public string $phone = '';
+    public string $poste= '';
     public int $status = self::STATUS_INACTIVE;
+    public int $age = 0;
+    public string $country = '';
+    public string $city= '';
+    public string $postaleCode = '';
     public string $password = '';
     public string $confirmPassword = '';
+    public int $fk_role = 1;
 
 
     public function tableName(): string
@@ -23,35 +30,35 @@ class User extends DbModel
         return 'users';
     }
 
-    public function updateUser()
-    {
-        return parent::update();
-    }
-
-    public function selectAll()
-    {
-        return parent::selectAll();
-    }
-
-    // public function findOne($where)
+    // public function updateUser()
     // {
-    //     return parent::findOne($where);
+    //     return parent::update();
     // }
 
-    public function delete($id)
+    // public function selectAll()
+    // {
+    //     return parent::selectAll();
+    // }
+
+    public function findOne($where)
     {
-        return parent::delete($id);
+        return parent::findOne($where);
     }
 
-    public function select($id)
-    {
-        return parent::select($id);
-    }
+    // public function delete($id)
+    // {
+    //     return parent::delete($id);
+    // }
+
+    // public function select($id)
+    // {
+    //     return parent::select($id);
+    // }
 
     public function save()
     {
-        $this->status = self::STATUS_INACTIVE;
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        // $this->status = self::STATUS_INACTIVE;
+        // $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         return parent::save();
     }
 
@@ -70,7 +77,7 @@ class User extends DbModel
 
     public function attributes(): array
     {
-        return ['firstname', 'lastname', 'email', 'password', 'status'];
+        return ['firstname', 'lastname', 'email', 'password', 'status', 'age', 'country', 'city', 'postaleCode', 'poste', 'phone'];
     }
 
 }
