@@ -2,11 +2,8 @@
 
 namespace app\controllers;
 
-use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
-use app\models\User;
-use app\models\LoginModel;
 
 class WelcomeController extends Controller
 {

@@ -1,6 +1,3 @@
-<?php 
-use app\core\Application; 
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +8,7 @@ use app\core\Application;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="./assets/style/main.css" rel="stylesheet">
-    <title>eSchoole</title>
+    <title>Shi-match</title>
 </head>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -40,13 +37,16 @@ use app\core\Application;
                 <div class="navbar-nav w-100">
                     <a href="/" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="./student" class="nav-link"><i class="bi bi-people-fill"></i>Student</a>
+                        <a href="./student" class="nav-link"><i class="bi bi-people-fill"></i>Players</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./teacher" class="nav-link"><i class="bi bi-people-fill"></i>Teacher</a>
+                        <a href="./teacher" class="nav-link"><i class="bi bi-people-fill"></i>Teams</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./class" class="nav-link"><i class="bi bi-people-fill"></i>Classes</a>
+                        <a href="./class" class="nav-link"><i class="bi bi-people-fill"></i>Matchs</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="./class" class="nav-link"><i class="bi bi-people-fill"></i>Tournois</a>
                     </div>
                 </div>
             </nav>
@@ -110,17 +110,7 @@ use app\core\Application;
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="./assets/js/main.js"></script>
 </body>
-
-</html>
-    <div class="container">
-        <?php //if (Application::$app->session->getFlash('success')) : ?>
-            <!-- <div class="alert alert-success"> -->
-                <?php  // echo  Application::$app->session->getFlash('success'); ?>
-            <!-- </div> -->
-        <?php // endif; ?>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
 </html>
