@@ -12,7 +12,8 @@ class HelperController extends Controller
 {
     public function index(Request $request)
     {
-        echo "test";
+        $this->setLayout('landing');
+        return $this->render('index');
     }
     public function login(Request $request)
     {

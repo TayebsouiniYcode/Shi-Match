@@ -1,0 +1,13 @@
+.btn-primary {
+    background-color: #1B8036 !important;
+    box-shadow: 3.23094px 10.7698px 21.5396px rgba(27, 128, 54, 0.51);
+    border-radius: 26.386px;
+    border: none;
+    padding: 5px 20px;
+}
+
+.btn-secondary {
+    background: #97C836;
+    border-radius: 76px;
+    color : #333;
+}
