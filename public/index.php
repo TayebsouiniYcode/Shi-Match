@@ -1,6 +1,7 @@
 <?php
+
+use app\controllers\HelperController;
 use app\core\Application;
-use app\controllers\WelcomeController;
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -15,9 +16,9 @@ $config = [
         ]
     ];
     
-    $app = new Application(dirname(__DIR__), $config);
-    
-    $app->router->get('/', [WelcomeController::class, 'index']);
+$app = new Application(dirname(__DIR__), $config);
+
+$app->router->get('/', [HelperController::class, 'index']);
     
 // $app->router->get('/login', [AuthController::class, 'login']);
 // $app->router->post('/login', [AuthController::class, 'login']);
