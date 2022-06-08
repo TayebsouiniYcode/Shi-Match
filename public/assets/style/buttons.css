@@ -1,7 +1,7 @@
 .btn-primary {
     background-color: #1B8036 !important;
     box-shadow: 3.23094px 10.7698px 21.5396px rgba(27, 128, 54, 0.51);
-    border-radius: 26.386px;
+    border-radius: 8px;
     border: none;
     padding: 5px 20px;
 }
@@ -13,7 +13,7 @@
 }
 
 .btn-google {
-    border-radius: 26.386px;
+    border-radius: 8px;
     border: 1px solid black;
     padding: 5px 20px;
 }
