@@ -3,5 +3,15 @@
 }
 
 .w-30 {
+  width: 45%;
+}
+
+@media (min-width: 700px) {
+  .w-30 {
     width: 30%;
+}
+}
+
+.w-35 {
+  width: 35%;
 }
