@@ -2,17 +2,17 @@
     <div class="statistiques mt-5 p-3 bg-light rounded ">
         <h4>Statistiques</h4>
         <div class="d-flex justify-content-between align-items-center mx-3">
-            <div class="players bg-primary w-30 px-4 py-2 text-light rounded">
-                <h5>30000</h5>
-                <h6>Players</h6>
+            <div class="players d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
+                <span class="fs-6">30000</span>
+                <span class="fs-6-">Players</span>
             </div>
-            <div class="teams bg-primary w-30 px-4 py-2 text-light rounded">
-                <h5>250</h5>
-                <h6>Teams</h6>
+            <div class="teams d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
+                <span class="fs-6">250</span>
+                <span class="fs-6">Teams</span>
             </div>
-            <div class="matchs bg-primary w-30 px-4 py-2 text-light rounded">
-                <h5>44333</h5>
-                <h6>Matchs</h6>
+            <div class="matchs d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
+                <span class="fs-6-">44333</span>
+                <span class="fs-6-">Matchs</span>
             </div>
         </div>
     </div>
