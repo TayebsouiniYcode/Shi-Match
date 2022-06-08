@@ -1,5 +1,6 @@
 <?php
 
+use app\controllers\SharedController;
 use app\core\Application;
 use app\controllers\AuthController;
 use app\controllers\AdminController;
@@ -31,7 +32,9 @@ $app->router->get('/signup', [AuthController::class, 'signup']);
 $app->router->post('/signup', [AuthController::class, 'signup']);
 
 $app->router->get('/dashboard', [AdminController::class, 'dashboard']);
-$app->router->post('/dashboard', [AdminController::class, 'dashboard']);
+
+$app->router->get('/teams', [SharedController::class, 'teams']);
+// $app->router->post('/dashboard', [AdminController::class, 'dashboard']);
 // $app->router->get('/login', [AuthController::class, 'login']);
 // $app->router->post('/login', [AuthController::class, 'login']);
 
