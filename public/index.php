@@ -6,6 +6,7 @@ use app\controllers\AuthController;
 use app\controllers\AdminController;
 use app\controllers\HelperController;
 use app\controllers\TeamController;
+use app\controllers\PlayerController;
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -36,6 +37,8 @@ $app->router->get('/dashboard', [AdminController::class, 'dashboard']);
 
 $app->router->get('/teams', [SharedController::class, 'teams']);
 $app->router->get('/teamDetails', [TeamController::class, 'details']);
+$app->router->get('/players', [PlayerController::class, 'players']);
+
 // $app->router->post('/dashboard', [AdminController::class, 'dashboard']);
 // $app->router->get('/login', [AuthController::class, 'login']);
 // $app->router->post('/login', [AuthController::class, 'login']);

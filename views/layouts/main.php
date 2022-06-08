@@ -35,16 +35,16 @@
                 <div class="navbar-nav w-100">
                     <a href="/" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="./student" class="nav-link"><i class="bi bi-people-fill me-2"></i>Players</a>
+                        <a href="./player" class="nav-link"><i class="bi bi-people-fill me-2"></i>Players</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./teacher" class="nav-link"><i class="bi bi-people-fill me-2"></i>Teams</a>
+                        <a href="./teams" class="nav-link"><i class="bi bi-people-fill me-2"></i>Teams</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./class" class="nav-link"><i class="bi bi-people-fill me-2"></i>Matchs</a>
+                        <a href="./matchs" class="nav-link"><i class="bi bi-people-fill me-2"></i>Matchs</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./class" class="nav-link"><i class="bi bi-people-fill me-2"></i>Tournois</a>
+                        <a href="./tournois" class="nav-link"><i class="bi bi-people-fill me-2"></i>Tournois</a>
                     </div>
                 </div>
             </nav>
