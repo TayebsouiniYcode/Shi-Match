@@ -11,4 +11,9 @@ class PlayerController extends Controller
     {
         return $this->render('players');
     }
+
+    public function playerDetails(Request $request)
+    {
+        return $this->render('playerDetails');
+    }
 }
