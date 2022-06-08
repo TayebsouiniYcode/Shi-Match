@@ -3,6 +3,7 @@
 @import "font.css";
 @import "box.css";
 @import "background.css";
+@import "cards.css";
 
 *{
     font-family: 'Roboto';
