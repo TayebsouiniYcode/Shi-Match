@@ -1,3 +1,21 @@
 .footer {
     background: linear-gradient(100.66deg, #1B8036 23.13%, rgba(8, 63, 26, 0.92) 82.12%, rgba(8, 63, 26, 0.86) 97.79%);
 }
+
+.bg-primary {
+    background-color: #1B8036 !important;
+}
+
+.dash-dtatus{
+    background-color: #1b80363a;
+    color: #1B8036;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.dash-banned {
+    background-color: #c22b2b40;
+    color: #c22b2b;
+    border-radius: 8px;
+    text-align: center;
+}

@@ -80,7 +80,7 @@
 
             
 
-            <div class="container px-4 mt-2">
+            <div class="row px-4 mt-2 mx-2">
                 {{content}}
             </div>
             
