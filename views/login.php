@@ -40,7 +40,8 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 mt-4">Sign in</button>
-                            <a href="#" class="btn btn-google w-100 mt-2">sign in with Google</a>
+                            <a href="#" class="btn btn-google w-100 mt-3">sign in with Google</a>
+                            <span class="text-center mt-2">Don't have an account? <a href="/signup">Sign up for free!</a></span>
                         </div>
                         <div class="image">
                             <img src="/assets/img/Image-login.png" alt="" height="450">
