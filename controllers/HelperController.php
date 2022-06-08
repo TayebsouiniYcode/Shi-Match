@@ -15,6 +15,12 @@ class HelperController extends Controller
         $this->setLayout('landing');
         return $this->render('index');
     }
+
+    public function welcomeYoucode(Request $request)
+    {
+        return $this->render('welcomeYoucode');
+    }
+
     public function login(Request $request)
     {
         // $login = new LoginModel();
