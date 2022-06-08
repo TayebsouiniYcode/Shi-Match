@@ -25,28 +25,26 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="/" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary">Shi-match</h3>
+                    <img src="/assets/img/Logo-BG.png" alt="" width="150" height="150">
                 </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
+                <!-- <div class="d-flex flex-column align-items-center mb-4 w-100">
                     
-                    <div class="ms-3">
-                        <h6 class="mb-0">Tayeb souini</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
+                        <h5 class="mb-0">Tayeb souini</h5>
+                        <h6 class="text-muted">Admin</h6>
+                </div> -->
                 <div class="navbar-nav w-100">
                     <a href="/" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="./student" class="nav-link"><i class="bi bi-people-fill"></i>Players</a>
+                        <a href="./student" class="nav-link"><i class="bi bi-people-fill me-2"></i>Players</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./teacher" class="nav-link"><i class="bi bi-people-fill"></i>Teams</a>
+                        <a href="./teacher" class="nav-link"><i class="bi bi-people-fill me-2"></i>Teams</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./class" class="nav-link"><i class="bi bi-people-fill"></i>Matchs</a>
+                        <a href="./class" class="nav-link"><i class="bi bi-people-fill me-2"></i>Matchs</a>
                     </div>
                     <div class="nav-item">
-                        <a href="./class" class="nav-link"><i class="bi bi-people-fill"></i>Tournois</a>
+                        <a href="./class" class="nav-link"><i class="bi bi-people-fill me-2"></i>Tournois</a>
                     </div>
                 </div>
             </nav>
@@ -58,12 +56,9 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-                </a>
                 <!-- this is here -->
                 <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars text-primary"></i>
                 </a>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
@@ -71,13 +66,12 @@
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                           
                             <span class="d-none d-lg-inline-flex">Tayeb souini</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="/profile" class="dropdown-item">My Profile</a>
+                            <a href="/settings" class="dropdown-item">Settings</a>
+                            <a href="/logout" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +93,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

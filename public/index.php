@@ -19,6 +19,8 @@ $config = [
     
 $app = new Application(dirname(__DIR__), $config);
 
+$app->router->get('/welcomeYoucode', [HelperController::class, 'welcomeYoucode']);
+
 $app->router->get('/', [HelperController::class, 'index']);
 
 $app->router->get('/login', [AuthController::class, 'login']);
