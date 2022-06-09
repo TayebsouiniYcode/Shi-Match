@@ -22,3 +22,7 @@
   /* border: 10px solid #1b80363a; */
   border-radius: 50%;
 }
+
+.time {
+  border-radius: 12px 12px 0px 0px;
+}

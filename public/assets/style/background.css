@@ -19,3 +19,14 @@
     border-radius: 8px;
     text-align: center;
 }
+
+.match-live {
+    background-color: #1b80363a;
+    padding: 5px 0px;
+}
+
+.match-full-time {
+    background-color: rgba(51, 51, 51, 0.081);
+    padding: 5px 0px;
+}
+
