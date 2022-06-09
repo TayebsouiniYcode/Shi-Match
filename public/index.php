@@ -39,6 +39,8 @@ $app->router->get('/teams', [SharedController::class, 'teams']);
 $app->router->get('/teamDetails', [TeamController::class, 'details']);
 $app->router->get('/players', [PlayerController::class, 'players']);
 $app->router->get('/playerDetails', [PlayerController::class, 'playerDetails']);
+$app->router->get('/matchs', [PlayerController::class, 'matchs']);
+
 
 
 // $app->router->post('/dashboard', [AdminController::class, 'dashboard']);
