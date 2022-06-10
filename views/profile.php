@@ -1,5 +1,5 @@
 <div class="profile bg-light rounded p-4">
-    <div class="aside d-flex align-items-end flex-wrap gap-5">
+    <div class="aside d-flex align-items-end flex-wrap gap-5 justify-content-center justify-content-md-start">
         <div class="profile-image">
             <img class="player-image-cercle" src="/assets/img/player.jpg" alt="" width="200">
         </div>

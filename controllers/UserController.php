@@ -11,4 +11,9 @@ class UserController extends Controller
     {
         return $this->render('profile');
     }
+
+    public function editPassword(Request $request)
+    {
+        return $this->render('editPassword');
+    }
 }
