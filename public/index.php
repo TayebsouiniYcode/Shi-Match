@@ -7,6 +7,7 @@ use app\controllers\AdminController;
 use app\controllers\HelperController;
 use app\controllers\TeamController;
 use app\controllers\PlayerController;
+use app\controllers\UserController;
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -40,6 +41,8 @@ $app->router->get('/teamDetails', [TeamController::class, 'details']);
 $app->router->get('/players', [PlayerController::class, 'players']);
 $app->router->get('/playerDetails', [PlayerController::class, 'playerDetails']);
 $app->router->get('/matchs', [PlayerController::class, 'matchs']);
+$app->router->get('/profile', [UserController::class, 'profile']);
+$app->router->get('/editPassword', [UserController::class, 'editPassword']);
 
 
 

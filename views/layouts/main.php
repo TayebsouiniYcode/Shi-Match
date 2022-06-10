@@ -35,7 +35,7 @@
                 <div class="navbar-nav w-100">
                     <a href="/" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="./player" class="nav-link"><i class="bi bi-people-fill me-2"></i>Players</a>
+                        <a href="./players" class="nav-link"><i class="bi bi-people-fill me-2"></i>Players</a>
                     </div>
                     <div class="nav-item">
                         <a href="./teams" class="nav-link"><i class="bi bi-people-fill me-2"></i>Teams</a>
