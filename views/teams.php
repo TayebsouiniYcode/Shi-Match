@@ -344,4 +344,8 @@
             <a class="btn btn-primary" href="#">View all Matchs</a>
         </div>
     </div>
+
+    <div class="matchs bg-light rounded pb-3 mt-5 d-flex justify-content-center">
+        <a href="createTeam" class="btn btn-primary w-100">Create Team</a>
+    </div>
 </div>

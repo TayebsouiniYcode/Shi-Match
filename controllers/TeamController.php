@@ -11,4 +11,9 @@ class TeamController extends Controller
     {
         return $this->render('teamDetails'); 
     }
+
+    public function create(Request $request)
+    {
+        return $this->render('createTeam');
+    }
 }
