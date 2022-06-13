@@ -6,12 +6,12 @@ class m0001_create_table_roles
     {
         $db = \app\core\Application::$app->db;
         $SQL = "CREATE TABLE roles(
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    label VARCHAR(20) NOT NULL,
-                    description VARCHAR(255),
-                    code VARCHAR(10) NOT NULL,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                    ) ENGINE=INNODB; 
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                role_name VARCHAR(20) NOT NULL,
+                description VARCHAR(255),
+                code VARCHAR(10) NOT NULL UNIQUE,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=INNODB; 
             ";
         $db->pdo->exec($SQL);
     }
