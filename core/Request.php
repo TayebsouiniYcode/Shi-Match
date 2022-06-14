@@ -7,7 +7,6 @@ class Request
 
     public function getPath()
     {
-
         $path = $_SERVER['REQUEST_URI'] ?? '/';
         $position = strpos($path, '?');
 
@@ -38,7 +37,6 @@ class Request
     {
         $body = [];
 
-        //secure doby data
         if ($this->method() === 'get')
         {
             foreach($_GET as $key => $value)

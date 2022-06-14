@@ -32,19 +32,11 @@ class Application
         echo $this->router->resolve();
     }
 
-    /**
-     * Get the value of controller
-     */ 
     public function getController()
     {
         return $this->controller;
     }
 
-    /**
-     * Set the value of controller
-     *
-     * @return  self
-     */ 
     public function setController(Controller $controller) : void
     {
         $this->controller = $controller;
