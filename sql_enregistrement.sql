@@ -64,11 +64,16 @@ INSERT INTO teams (name, quote, city, postale_code, max_age, min_age, number_max
 UPDATE player_infos SET fk_team = 1;
 
 -- Create match
-INSERT INTO matchs (date) VALUES ('24-02-2022');
+INSERT INTO matchs (date) VALUES ('24/02/2022');
+
+INSERT INTO matchs (date) VALUES ('30/3/2022');
 
 -- insert team to match
-INSERT INTO team_match (fk_match, fk_team) VALUEs (1, 1);
-INSERT INTO team_match (fk_match, fk_team) VALUEs (1, 2);
+INSERT INTO team_match (fk_match, fk_team) VALUES (1, 1);
+INSERT INTO team_match (fk_match, fk_team) VALUES (1, 2);
+
+INSERT INTO team_match (fk_match, fk_team) VALUES (2, 3);
+INSERT INTO team_match (fk_match, fk_team) VALUES (2, 2);
 
 -- insert goal
 INSERT INTO goals (fk_player, minute, type) VALUEs (1, '20', 'foot_1');
