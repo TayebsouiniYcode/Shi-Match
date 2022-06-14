@@ -7,10 +7,9 @@ use PDO;
 abstract class DbModel extends Model
 {
     public $dataList = [];
+
     abstract public function tableName(): string;
-
     abstract public function attributes(): array;
-
 
     public function save()
     {

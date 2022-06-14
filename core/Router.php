@@ -59,14 +59,12 @@ class Router
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderOnlyView($view, $params);
         return str_replace('{{content}}', $viewContent, $layoutContent);
-        // include_once Application::$ROOT_DIR."/views/$view.php";
     }
 
     public function renderContent($viewContent) 
     {
         $layoutContent = $this->layoutContent();
         return str_replace('{{content}}', $viewContent, $layoutContent);
-        // include_once Application::$ROOT_DIR."/views/$view.php";
     }
 
     protected function layoutContent() 
@@ -81,7 +79,7 @@ class Router
     {
         foreach($params as $key => $value)
         {
-            $$key = $value; //is key = name = $name = value 
+            $$key = $value;
         }
 
         ob_start();
