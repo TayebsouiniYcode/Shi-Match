@@ -24,7 +24,8 @@ abstract class DbModel extends Model
         }
 
         $statement->execute();
-        return true;
+        
+        return Application::$app->db->pdo->lastInsertId();
     }
 
     public static function prepare($sql)

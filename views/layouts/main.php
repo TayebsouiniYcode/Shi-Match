@@ -33,7 +33,7 @@
                         <h6 class="text-muted">Admin</h6>
                 </div> -->
                 <div class="navbar-nav w-100">
-                    <a href="/" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                         <a href="./players" class="nav-link"><i class="bi bi-people-fill me-2"></i>Players</a>
                     </div>
@@ -68,7 +68,9 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <span class="d-none d-lg-inline-flex">
                                 <?php 
-                                    echo $_SESSION['email'] ?? 'Guest';
+                                    echo $_SESSION['firstname'] . " " . $_SESSION['lastname'];
+                                    echo "<br>";
+                                    echo $_SESSION['role'] ?? 'Guest';
                                 ?>
                             </span>
                         </a>
@@ -84,7 +86,7 @@
 
             
 
-            <div class="row px-4 mt-5 mx-2">
+            <div class="row px-4 mx-2">
                 {{content}}
             </div>
             
