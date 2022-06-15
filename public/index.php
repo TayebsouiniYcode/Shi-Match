@@ -44,6 +44,9 @@ $app->router->get('/matchs', [PlayerController::class, 'matchs']);
 $app->router->get('/profile', [UserController::class, 'profile']);
 $app->router->post('/profile', [UserController::class, 'profile']);
 
+$app->router->get('/addPlayer', [PlayerController::class, 'addPlayer']);
+$app->router->post('/addPlayer', [PlayerController::class, 'addPlayer']);
+
 $app->router->get('/editPassword', [UserController::class, 'editPassword']);
 $app->router->get('/createTeam', [TeamController::class, 'create']);
 
