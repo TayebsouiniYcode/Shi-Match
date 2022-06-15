@@ -38,10 +38,17 @@ class AuthController extends Controller
                 $_SESSION['lastname'] = $user->lastname;
                 $_SESSION['role'] = $user->role_name;
 
+                if ($user->role_name === 'admin'){
+                    // Application::$app->session->sefFlash('success', 'Welcome');
+                    Application::$app->response->redirect('/dashboard');
+                    return;
+                }
 
-                Application::$app->session->sefFlash('success', 'Welcome');
-                Application::$app->response->redirect('/dashboard');
-                return;
+                if ($user->role_name === 'user'){
+                    Application::$app->response->redirect('/profile');
+                    return;
+                }
+                
             }
         }
         $this->setLayout('auth');
