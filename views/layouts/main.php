@@ -66,7 +66,11 @@
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <span class="d-none d-lg-inline-flex">Tayeb souini</span>
+                            <span class="d-none d-lg-inline-flex">
+                                <?php 
+                                    echo $_SESSION['email'] ?? 'Guest';
+                                ?>
+                            </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="/profile" class="dropdown-item">My Profile</a>

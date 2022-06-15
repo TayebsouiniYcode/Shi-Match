@@ -13,4 +13,9 @@ class Response
     {
         header('Location: '.$url);
     }
+
+    static function staticRedirect(string $url)
+    {
+        header('Location: '.$url);
+    }
 }

@@ -4,6 +4,7 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
+use app\core\Response;
 use app\models\LoginModel;
 use app\models\UserModel;
 
@@ -15,8 +16,10 @@ class AuthController extends Controller
         if ($request->isPost()) {
             $login->loadData($request->getBody());
             if ($login->validate() && $login->login()) {
+                session_start();
+                $_SESSION['email'] = $login->email;
                 Application::$app->session->sefFlash('success', 'Welcome');
-                Application::$app->response->redirect('/student');
+                Application::$app->response->redirect('/dashboard');
                 return;
             }
         }
@@ -46,5 +49,12 @@ class AuthController extends Controller
 
         return $this->render('signup', [
             'model' => $user
-        ]);    }
+        ]);    
+    }
+
+    public function logout(Request $request)
+    {
+        Application::$app->logout();
+        Response::staticRedirect('/');
+    }
 }
