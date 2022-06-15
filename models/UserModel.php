@@ -12,17 +12,20 @@ class UserModel extends DbModel
     public int $id;
     public string $firstname = '';
     public string $lastname = '';
+    public int $age = 0;
     public string $email =  '';
     public string $phone = '';
-    public string $poste= '';
     public int $status = self::STATUS_INACTIVE;
-    public int $age = 0;
-    public string $country = '';
-    public string $city= '';
-    public string $postaleCode = '';
     public string $password = '';
     public string $confirmPassword = '';
-    public int $fk_role = 1;
+    public string $role = '';
+    public int $fk_role = 2;
+    public int $fk_address = 1;
+    //address
+    public string $country = '';
+    public string $city= '';
+    public string $postale_code = '';
+    public string $address = '';
 
 
     public function tableName(): string
@@ -58,7 +61,23 @@ class UserModel extends DbModel
     public function save()
     {
         // $this->status = self::STATUS_INACTIVE;
-        // $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        
+        $address = new AddressModel();
+        $address->loadData([
+            'address' => $this->address, 
+            'city' => $this->city, 
+            'country' => $this->country,
+            'postale_code' => $this->postale_code
+        ]);
+        $this->fk_address = $address->save();
+
+        // echo "<pre>";
+        // var_dump($address);
+        // echo "</pre>";
+        // echo '<br>';
+        // echo $this->fk_address;
+        // exit;
+
         return parent::save();
     }
 
@@ -77,7 +96,7 @@ class UserModel extends DbModel
 
     public function attributes(): array
     {
-        return ['firstname', 'lastname', 'email', 'password', 'status', 'age', 'country', 'city', 'postaleCode', 'poste', 'phone'];
+        return ['firstname', 'lastname', 'email', 'password', 'status', 'age', 'phone', 'fk_role', 'fk_address'];
     }
 
 }

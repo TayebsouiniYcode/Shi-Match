@@ -6,6 +6,7 @@ use app\core\Controller;
 use app\core\Request;
 use app\core\Response;
 use app\models\LoginModel;
+use app\models\RoleModel;
 use app\models\UserModel;
 
 class AuthController extends Controller
@@ -15,9 +16,29 @@ class AuthController extends Controller
         $login = new LoginModel();
         if ($request->isPost()) {
             $login->loadData($request->getBody());
+            $user = new UserModel();
+            $user = $login->login();
             if ($login->validate() && $login->login()) {
+
+                $role = new RoleModel();
+                $role->select($user->fk_role);
+                $role->loadData($role->dataList);
+                $role->dataList = null;
+                // echo "<pre>";
+                // var_dump($role);
+                // echo "</pre>";
+                // exit;
+                // $role->loadData();
+                $user->role_name = $role->role_name;
                 session_start();
                 $_SESSION['email'] = $login->email;
+                $_SESSION['id'] = $user->id;
+                $_SESSION['password'] = $user->password;
+                $_SESSION['firstname'] = $user->firstname;
+                $_SESSION['lastname'] = $user->lastname;
+                $_SESSION['role'] = $user->role_name;
+
+
                 Application::$app->session->sefFlash('success', 'Welcome');
                 Application::$app->response->redirect('/dashboard');
                 return;

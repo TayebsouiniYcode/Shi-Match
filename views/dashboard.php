@@ -1,4 +1,4 @@
-<div class="primary-content col-10 col-lg-8 me-3 mt-5">
+<div class="primary-content col-10 col-lg-8 me-3">
     <div class="statistiques mt-5 p-3 bg-light rounded ">
         <h4>Statistiques</h4>
         <div class="d-flex justify-content-between align-items-center mx-3">
@@ -160,7 +160,7 @@
         </table>
     </div>
 </div>
-<div class="secondary-content col-10 col-lg-3 mt-5">
+<div class="secondary-content col-10 col-lg-3">
     <div class="top-rating bg-light rounded pb-3">
         <div class="p-3 mt-5 ">
             <h3 class="text-center">Top rating</h3>

@@ -28,10 +28,6 @@ class LoginModel extends Model
             $this->addErrorLogin('password', 'Password is incorrect');
             return false;
         }
-      $_SESSION['email'] = $this->email;
-      $_SESSION['firstname'] = $user->firstname;
-      $_SESSION['lastname'] = $user->lastname;
-      $_SESSION['id'] = $user->id;
-      return true;
+      return $user;
     }
 }

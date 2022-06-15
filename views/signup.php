@@ -47,11 +47,12 @@
                             <div class="col">
                                 <?php echo $form->field($model, 'phone'); ?>
                             </div>
+                        </div>
+                        <div class="row mt-3">
                             <div class="col">
-                                <?php echo $form->field($model, 'poste'); ?>
+                                <?php echo $form->field($model, 'address'); ?>
                             </div>
                         </div>
-
                         <div class="row mt-3">
                             <div class="col">
                                 <?php echo $form->field($model, 'country'); ?>
@@ -60,7 +61,7 @@
                                 <?php echo $form->field($model, 'city'); ?>
                             </div>
                             <div class="col">
-                                <?php echo $form->field($model, 'postaleCode'); ?>
+                                <?php echo $form->field($model, 'postale_code'); ?>
                             </div>
                         </div>
                         <div class="row mt-3">
