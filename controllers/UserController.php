@@ -10,10 +10,10 @@ class UserController extends Controller
     public function profile(Request $request)
     {
         $user = new UserModel();
-        $user->select($_SESSION['id']);
-        $user->loadData($user->dataList);
 
         if($request->isGet()){
+            $user->select($_SESSION['id']);
+            $user->loadData($user->dataList);
             return $this->render('profile', [
                 'model' => $user
             ]);
@@ -31,8 +31,14 @@ class UserController extends Controller
         }
     }
 
-    public function editPassword(Request $request)
-    {
-        return $this->render('editPassword');
-    }
+    // public function editPassword(Request $request)
+    // {
+    //     $user = new UserModel();
+
+    //     if ($request->isGet()){
+    //         $user->select($_SESSION['id']);
+    //         return $this->render('editPassword', ['model' => $user]);
+    //     }
+        
+    // }
 }
