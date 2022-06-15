@@ -45,6 +45,7 @@ $app->router->get('/profile', [UserController::class, 'profile']);
 $app->router->get('/editPassword', [UserController::class, 'editPassword']);
 $app->router->get('/createTeam', [TeamController::class, 'create']);
 
+$app->router->get('/logout', [AuthController::class, 'logout']);
 
 
 

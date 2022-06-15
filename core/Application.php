@@ -46,4 +46,10 @@ class Application
     {
        $this->user = $user;
     }
+
+    public function logout()
+    {
+        $this->user = null;
+        $_SESSION['email'] = null;
+    }
 }
