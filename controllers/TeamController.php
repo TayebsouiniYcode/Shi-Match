@@ -8,9 +8,26 @@ use app\models\TeamModel;
 
 class TeamController extends Controller
 {
+    public function index(Request $request)
+    {
+        $team = new TeamModel();
+        $team->selectAll();
+        $teams = $team->dataList;
+        return $this->render('teams', [
+            'teams' => $teams
+        ]);
+    }
+
     public function details(Request $request) 
     {
-        return $this->render('teamDetails'); 
+        $teamId = $_GET['id'];
+        $team = new TeamModel();
+        $team->select($teamId);
+        $team->loadData($team->dataList);
+        $team->dataList = null;
+        return $this->render('teamDetails', [
+            'team' => $team
+        ]); 
     }
 
     public function create(Request $request)
@@ -39,7 +56,8 @@ class TeamController extends Controller
 
         if ($request->isGet())
         {
-            $team->select(4);
+            $teamId =  $_GET['id'];
+            $team->select($teamId);
             $team->loadData($team->dataList);
             $team->dataList = null;
             return $this->render('addTeam', [
@@ -55,5 +73,14 @@ class TeamController extends Controller
                 'model' => $team
             ]);
         }
+    }
+
+    public function destroy(Request $request){
+        $teamId = $_GET['id'];
+
+        $team = new TeamModel();
+        $team->delete($teamId);
+
+        return $this->index($request);
     }
 }

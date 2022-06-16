@@ -36,14 +36,14 @@ $app->router->post('/signup', [AuthController::class, 'signup']);
 
 $app->router->get('/dashboard', [AdminController::class, 'dashboard']);
 
-$app->router->get('/teams', [SharedController::class, 'teams']);
+$app->router->get('/teams', [TeamController::class, 'index']);
 $app->router->get('/teamDetails', [TeamController::class, 'details']);
 $app->router->get('/players', [PlayerController::class, 'players']);
 $app->router->get('/playerDetails', [PlayerController::class, 'playerDetails']);
 $app->router->get('/matchs', [PlayerController::class, 'matchs']);
 $app->router->get('/profile', [UserController::class, 'profile']);
 $app->router->post('/profile', [UserController::class, 'profile']);
-
+$app->router->get('/deleteTeam', [TeamController::class, 'destroy']);
 $app->router->get('/addPlayer', [PlayerController::class, 'addPlayer']);
 $app->router->post('/addPlayer', [PlayerController::class, 'addPlayer']);
 

@@ -4,9 +4,9 @@
             <img src="/assets/img/team-logo2.png" alt="" height="200">
         </div>
         <div class="team-infos col-12 col-md-8">
-            <h2>Namek <em>(7/8)</em></h2>
+            <h2><?php echo $team->name; ?> <em>(7/<?php echo $team->number_max_of_players; ?>)</em></h2>
             <p>
-                Youssoufia, Morocco
+                <?php echo $team->city; ?>, <?php echo $team->country; ?>
             </p>
             <div class="team-stats mt-3 d-flex justify-content-between gap-2 w-50">
                 <div class="win d-flex w-100">
@@ -14,7 +14,7 @@
                         <span class="fs-8 text-light w-100">Win</span>
                     </div>
                     <div class="win-number w-25">
-                        <span class="w-25">7</span>
+                        <span class="w-25"><?php echo $team->win; ?></span>
                     </div>
                 </div>
                 <div class="loss d-flex rounded w-100">
@@ -22,7 +22,7 @@
                         <span class="fs-8 text-light">Loss</span>
                     </div>
                     <div class="loss-number w-25">
-                        <span>0</span>
+                        <span><?php echo $team->loss; ?></span>
                     </div>
                 </div>
                 <div class="draw d-flex rounded w-100">
@@ -30,14 +30,18 @@
                         <span class="fs-8 text-light">Draw</span>
                     </div>
                     <div class="draw-number w-25">
-                        <span>2</span>
+                        <span><?php echo $team->draw; ?></span>
                     </div>
                 </div>
             </div>
+            <div class="mt-4 d-flex justify-content-end gap-3">
+                <a class="btn bg-warning text-light" href="/editTeam?id=<?php echo $team->id;?>">Edit</a>
+                <a class="btn bg-danger text-light" href="/deleteTeam?id=<?php echo $team->id;?>">Delete</a>
+            </div>
             <p class="mt-4">
-                <strong>Matchs: </strong> <span>51</span>
+                <!-- <strong>Matchs: </strong> <span>51</span>
                 <br>
-                <strong>Goals: </strong> <span>43</span>
+                <strong>Goals: </strong> <span>43</span> -->
             </p>
         </div>
     </div>

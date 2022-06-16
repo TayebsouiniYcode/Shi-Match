@@ -5,7 +5,7 @@ use app\core\DbModel;
 
 class TeamModel extends DbModel
 {
-    public int $id;
+    public int $id = 0;
     public string $name ='';
     public string $quote = '';
     public int $min_age = 0;
