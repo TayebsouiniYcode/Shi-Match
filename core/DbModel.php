@@ -87,4 +87,12 @@ abstract class DbModel extends Model
         $statement->execute();
         return $statement->fetchObject();
     }
+
+    public function count()
+    {
+        $tableName = $this->tableName();
+        $statement = self::prepare("SELECT COUNT(*) FROM $tableName");
+        $statement->execute();
+        return $statement->fetchColumn();
+    }
 }

@@ -7,7 +7,7 @@
                 <span class="fs-6-">Players</span>
             </div>
             <div class="teams d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
-                <span class="fs-6">250</span>
+                <span class="fs-6"><?php echo $number_of_teams; ?></span>
                 <span class="fs-6">Teams</span>
             </div>
             <div class="matchs d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
