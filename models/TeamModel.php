@@ -17,6 +17,7 @@ class TeamModel extends DbModel
     public int $win = 0;
     public int $loss = 0;
     public int $draw = 0;
+    public string $image = "team-logo.png";
 
 
     public function tableName(): string
@@ -73,7 +74,8 @@ class TeamModel extends DbModel
             'postale_code',
             'win',
             'loss',
-            'draw'
+            'draw',
+            'image'
         ];
     }
 

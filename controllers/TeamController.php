@@ -69,9 +69,8 @@ class TeamController extends Controller
         {
             $team->loadData($request->getBody());
             $team->update($team->id);
-            return $this->render('addTeam', [
-                'model' => $team
-            ]);
+            Application::$app->response->redirect('/teams');
+            return;
         }
     }
 
@@ -82,5 +81,27 @@ class TeamController extends Controller
         $team->delete($teamId);
 
         return $this->index($request);
+    }
+
+    public function updateImage(Request $request)
+    {
+        $teamId =  $_POST['id'];
+        $data = $request->getBody();
+        
+        $team = new TeamModel();
+
+        $team->select($teamId);
+        $team->loadData($team->dataList);
+        $team->image = $data['image'];
+        $team->dataList = null;
+        $team->update($teamId);
+
+        Application::$app->response->redirect('/teams');
+        return;
+
+        if ($request->isPost())
+        {
+
+        }
     }
 }

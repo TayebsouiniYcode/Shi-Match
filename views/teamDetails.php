@@ -1,7 +1,7 @@
-<div class="primary-content col-lg-9 col-12">
+<div class="primary-content col-lg-9 col-12 mt-5">
     <div class="team-card row bg-light">
         <div class="team-image col-12 col-md-4">
-            <img src="/assets/img/team-logo2.png" alt="" height="200">
+            <img data-bs-toggle="modal" data-bs-target="#exampleModal" src="/assets/img/<?php echo $team->image; ?>" alt="" height="200" width="200">
         </div>
         <div class="team-infos col-12 col-md-8">
             <h2><?php echo $team->name; ?> <em>(7/<?php echo $team->number_max_of_players; ?>)</em></h2>
@@ -46,7 +46,7 @@
         </div>
     </div>
 </div>
-<div class="secondary-content col-12 col-lg-3 ">
+<div class="secondary-content col-12 col-lg-3 mt-5">
     <div class="top-rating bg-light rounded pb-3">
         <div class="p-3">
             <h3 class="text-center">Top rating</h3>
@@ -88,4 +88,29 @@
         <button class="btn bg-warning text-light w-50">Ban</button>
         <button class="btn bg-danger text-light w-50">Delete</button>
     </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update image</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php 
+            $form = app\core\form\Form::beginWithImage('/updateTeamImage', 'post');
+            echo $form->field($team, 'id')->hiddenField();
+        ?>
+            <input type="file" name="image" id="image">
+        
+      </div>
+      <div class="modal-footer">
+        <input class="btn btn-primary" type="submit" value="Save">
+      </div>
+      <?php $form::end(); ?>
+    </div>
+  </div>
 </div>
