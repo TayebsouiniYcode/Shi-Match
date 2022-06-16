@@ -55,6 +55,7 @@ $app->router->post('/addTeam', [TeamController::class, 'create']);
 
 $app->router->get('/editTeam', [TeamController::class, 'edit']);
 $app->router->post('/editTeam', [TeamController::class, 'edit']);
+$app->router->post('/updateTeamImage', [TeamController::class, 'updateImage']);
 
 $app->router->get('/logout', [AuthController::class, 'logout']);
 

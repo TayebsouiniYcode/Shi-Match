@@ -37,7 +37,7 @@ use app\models\TeamModel;
     <div class="team-card bg-light rounded-3 w-30 p-3 text-center" >
     <a class="text-dark text-decoration-none" href="/teamDetails?id=<?php echo $team->id; ?>">
             <div class="team-logo mt-2">
-                    <img src="/assets/img/team-logo.png" alt="">
+                    <img src="/assets/img/<?php echo $team->image ?? 'team-logo.png'; ?>" alt="" width="150" height="150">
             </div>
             <div class="team-name mt-3">
                 <h5><?php echo $team->name; ?></h5>
@@ -71,7 +71,7 @@ use app\models\TeamModel;
             <div class="team-info bg-light d-flex flex-column mt-3">
                 <span>Country : <?php echo $team->country; ?></span>
                 <span>City : <?php echo $team->city; ?></span>
-                <span>Players : 5/11</span>
+                <span>Players : 5/ <?php echo $team->number_max_of_players; ?></span>
                 <span>Age : <?php echo $team->min_age; ?> - <?php echo $team->max_age; ?></span>
             </div>
         </div>

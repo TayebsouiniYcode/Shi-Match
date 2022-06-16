@@ -11,6 +11,12 @@ class Form
         return new Form();
     }
 
+    public static function beginWithImage($action, $method)
+    {
+        echo sprintf('<form action="%s" method="%s" enctype="multipart/form-data">', $action, $method);
+        return new Form();
+    }
+
     public static function end()
     {
         echo '</form>';
