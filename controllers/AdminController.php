@@ -24,10 +24,15 @@ class AdminController extends Controller
             $match = new MatchModel();
             $number_of_matchs = $match->count();
 
+            $player->selectAll();
+            $players = $player->dataList;
+            
+
             return $this->render('dashboard', [
                 "number_of_teams" => $number_of_teams,
                 "number_of_players" => $number_of_players,
-                "number_of_matchs" => $number_of_matchs
+                "number_of_matchs" => $number_of_matchs,
+                'players' => $players
             ]); 
         }
         if ($role === 'user') 

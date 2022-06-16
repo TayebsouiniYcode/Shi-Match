@@ -3,7 +3,11 @@
         <h4>Statistiques</h4>
         <div class="d-flex justify-content-between align-items-center mx-3">
             <div class="players d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
-                <span class="fs-6"><?php echo $number_of_players; ?></span>
+                <span class="fs-6"><?php
+
+use app\models\PlayerModel;
+
+ echo $number_of_players; ?></span>
                 <span class="fs-6-">Players</span>
             </div>
             <div class="teams d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
@@ -36,87 +40,31 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
+                <?php $player = new PlayerModel(); ?>
+                <?php foreach ($players as $value) : ?>
+                    <?php $player->loadData($value); ?>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="/assets/img/<?php echo $player->image ?? 'player.jpg'; ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?php echo $player->name ?? 'Not found'; ?></p>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-banned">banned</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1 dash-dtatus">verified</p>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1 text-center">86%</p>
+                        </td>
+                        <td>Namek</td>
+                        <td>
+                            <p class="fw-normal mb-1 text-center">25</p>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    <!-- <tr>
                     <td>
                         <div class="d-flex align-items-center">
                             <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
@@ -155,7 +103,7 @@
                     <td>
                         <p class="fw-normal mb-1 text-center">25</p>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
@@ -165,13 +113,13 @@
         <div class="p-3 mt-5 ">
             <h3 class="text-center">Top rating</h3>
             <div class="d-flex justify-content-between my-3">
-                <span>Khalid</span> <span>86%</span>  <span>Namek</span>
+                <span>Khalid</span> <span>86%</span> <span>Namek</span>
             </div>
             <div class="d-flex justify-content-between my-3">
-                <span>Azeddine</span> <span>85%</span>  <span>Aliens</span>
+                <span>Azeddine</span> <span>85%</span> <span>Aliens</span>
             </div>
             <div class="d-flex justify-content-between my-3">
-                <span>Khalil</span> <span>73%</span>  <span>Error 404</span>
+                <span>Khalil</span> <span>73%</span> <span>Error 404</span>
             </div>
         </div>
         <div class="boutons d-flex justify-content-center">
@@ -184,13 +132,13 @@
         <div class="p-3 mt-5 ">
             <h3 class="text-center">Matchs</h3>
             <div class="d-flex justify-content-between my-3">
-                <span>Khalid</span> <span>25</span>  <span>Namek</span>
+                <span>Khalid</span> <span>25</span> <span>Namek</span>
             </div>
             <div class="d-flex justify-content-between my-3">
-                <span>Azeddine</span> <span>23</span>  <span>Aliens</span>
+                <span>Azeddine</span> <span>23</span> <span>Aliens</span>
             </div>
             <div class="d-flex justify-content-between my-3">
-                <span>Khalil</span> <span>19</span>  <span>Error 404</span>
+                <span>Khalil</span> <span>19</span> <span>Error 404</span>
             </div>
         </div>
         <div class="boutons d-flex justify-content-center">
