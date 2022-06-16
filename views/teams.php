@@ -1,3 +1,8 @@
+<?php 
+
+use app\models\TeamModel; 
+
+?>
 <div class="primary-content  col-lg-9 col-12 ">
     <div class="search-bar mt-5 p-3 bg-light rounded ">
         <form action="" >
@@ -26,12 +31,16 @@
     </div>
 
     <div class="teams-list my-5 rounded d-flex flex-wrap justify-content-between gap-2">
-        <div class="team-card bg-light rounded-3 w-30 p-3 text-center">
+    
+    <?php foreach($teams as $value) : ?>
+    <?php  $team = new TeamModel(); $team->loadData($value);?>
+    <div class="team-card bg-light rounded-3 w-30 p-3 text-center" >
+    <a class="text-dark text-decoration-none" href="/teamDetails?id=<?php echo $team->id; ?>">
             <div class="team-logo mt-2">
-                <img src="/assets/img/team-logo.png" alt="">
+                    <img src="/assets/img/team-logo.png" alt="">
             </div>
             <div class="team-name mt-3">
-                <h5>Namek</h5>
+                <h5><?php echo $team->name; ?></h5>
             </div>
             <div class="team-stats mt-3 d-flex justify-content-between gap-2">
                 <div class="win d-flex w-100">
@@ -39,7 +48,7 @@
                         <span class="fs-8 text-light w-100">Win</span>
                     </div>
                     <div class="win-number w-25">
-                        <span class="w-25">7</span>
+                        <span class="w-25"><?php echo $team->win; ?></span>
                     </div>
                 </div>
                 <div class="loss d-flex rounded w-100">
@@ -47,7 +56,7 @@
                         <span class="fs-8 text-light">Loss</span>
                     </div>
                     <div class="loss-number w-25">
-                        <span>0</span>
+                        <span><?php echo $team->loss; ?></span>
                     </div>
                 </div>
                 <div class="draw d-flex rounded w-100">
@@ -55,256 +64,19 @@
                         <span class="fs-8 text-light">Draw</span>
                     </div>
                     <div class="draw-number w-25">
-                        <span>2</span>
+                        <span><?php echo $team->draw; ?></span>
                     </div>
                 </div>
             </div>
             <div class="team-info bg-light d-flex flex-column mt-3">
-                <span>City : Youssoufia</span>
+                <span>Country : <?php echo $team->country; ?></span>
+                <span>City : <?php echo $team->city; ?></span>
                 <span>Players : 5/11</span>
-                <span>Age : 16 - 28</span>
+                <span>Age : <?php echo $team->min_age; ?> - <?php echo $team->max_age; ?></span>
             </div>
         </div>
-
-        <div class="team-card bg-light rounded-3 w-30 p-3 text-center">
-            <div class="team-logo mt-2">
-                <img src="/assets/img/team-logo.png" alt="">
-            </div>
-            <div class="team-name mt-3">
-                <h5>Namek</h5>
-            </div>
-            <div class="team-stats mt-3 d-flex justify-content-between gap-2">
-                <div class="win d-flex w-100">
-                    <div class="badge-stats win-title bg-success w-75">
-                        <span class="fs-8 text-light w-100">Win</span>
-                    </div>
-                    <div class="win-number w-25">
-                        <span class="w-25">7</span>
-                    </div>
-                </div>
-                <div class="loss d-flex rounded w-100">
-                    <div class="badge-stats loss-title bg-danger w-75">
-                        <span class="fs-8 text-light">Loss</span>
-                    </div>
-                    <div class="loss-number w-25">
-                        <span>0</span>
-                    </div>
-                </div>
-                <div class="draw d-flex rounded w-100">
-                    <div class="badge-stats draw-title bg-warning w-75">
-                        <span class="fs-8 text-light">Draw</span>
-                    </div>
-                    <div class="draw-number w-25">
-                        <span>2</span>
-                    </div>
-                </div>
-            </div>
-            <div class="team-info bg-light d-flex flex-column mt-3">
-                <span>City : Youssoufia</span>
-                <span>Players : 5/11</span>
-                <span>Age : 16 - 28</span>
-            </div>
-        </div>
-
-        <div class="team-card bg-light rounded-3 w-30 p-3 text-center">
-            <div class="team-logo mt-2">
-                <img src="/assets/img/team-logo.png" alt="">
-            </div>
-            <div class="team-name mt-3">
-                <h5>Namek</h5>
-            </div>
-            <div class="team-stats mt-3 d-flex justify-content-between gap-2">
-                <div class="win d-flex w-100">
-                    <div class="badge-stats win-title bg-success w-75">
-                        <span class="fs-8 text-light w-100">Win</span>
-                    </div>
-                    <div class="win-number w-25">
-                        <span class="w-25">7</span>
-                    </div>
-                </div>
-                <div class="loss d-flex rounded w-100">
-                    <div class="badge-stats loss-title bg-danger w-75">
-                        <span class="fs-8 text-light">Loss</span>
-                    </div>
-                    <div class="loss-number w-25">
-                        <span>0</span>
-                    </div>
-                </div>
-                <div class="draw d-flex rounded w-100">
-                    <div class="badge-stats draw-title bg-warning w-75">
-                        <span class="fs-8 text-light">Draw</span>
-                    </div>
-                    <div class="draw-number w-25">
-                        <span>2</span>
-                    </div>
-                </div>
-            </div>
-            <div class="team-info bg-light d-flex flex-column mt-3">
-                <span>City : Youssoufia</span>
-                <span>Players : 5/11</span>
-                <span>Age : 16 - 28</span>
-            </div>
-        </div>
-
-        <div class="team-card bg-light rounded-3 w-30 p-3 text-center">
-            <div class="team-logo mt-2">
-                <img src="/assets/img/team-logo.png" alt="">
-            </div>
-            <div class="team-name mt-3">
-                <h5>Namek</h5>
-            </div>
-            <div class="team-stats mt-3 d-flex justify-content-between gap-2">
-                <div class="win d-flex w-100">
-                    <div class="badge-stats win-title bg-success w-75">
-                        <span class="fs-8 text-light w-100">Win</span>
-                    </div>
-                    <div class="win-number w-25">
-                        <span class="w-25">7</span>
-                    </div>
-                </div>
-                <div class="loss d-flex rounded w-100">
-                    <div class="badge-stats loss-title bg-danger w-75">
-                        <span class="fs-8 text-light">Loss</span>
-                    </div>
-                    <div class="loss-number w-25">
-                        <span>0</span>
-                    </div>
-                </div>
-                <div class="draw d-flex rounded w-100">
-                    <div class="badge-stats draw-title bg-warning w-75">
-                        <span class="fs-8 text-light">Draw</span>
-                    </div>
-                    <div class="draw-number w-25">
-                        <span>2</span>
-                    </div>
-                </div>
-            </div>
-            <div class="team-info bg-light d-flex flex-column mt-3">
-                <span>City : Youssoufia</span>
-                <span>Players : 5/11</span>
-                <span>Age : 16 - 28</span>
-            </div>
-        </div>
-
-        <div class="team-card bg-light rounded-3 w-30 p-3 text-center">
-            <div class="team-logo mt-2">
-                <img src="/assets/img/team-logo.png" alt="">
-            </div>
-            <div class="team-name mt-3">
-                <h5>Namek</h5>
-            </div>
-            <div class="team-stats mt-3 d-flex justify-content-between gap-2">
-                <div class="win d-flex w-100">
-                    <div class="badge-stats win-title bg-success w-75">
-                        <span class="fs-8 text-light w-100">Win</span>
-                    </div>
-                    <div class="win-number w-25">
-                        <span class="w-25">7</span>
-                    </div>
-                </div>
-                <div class="loss d-flex rounded w-100">
-                    <div class="badge-stats loss-title bg-danger w-75">
-                        <span class="fs-8 text-light">Loss</span>
-                    </div>
-                    <div class="loss-number w-25">
-                        <span>0</span>
-                    </div>
-                </div>
-                <div class="draw d-flex rounded w-100">
-                    <div class="badge-stats draw-title bg-warning w-75">
-                        <span class="fs-8 text-light">Draw</span>
-                    </div>
-                    <div class="draw-number w-25">
-                        <span>2</span>
-                    </div>
-                </div>
-            </div>
-            <div class="team-info bg-light d-flex flex-column mt-3">
-                <span>City : Youssoufia</span>
-                <span>Players : 5/11</span>
-                <span>Age : 16 - 28</span>
-            </div>
-        </div>
-
-        <div class="team-card bg-light rounded-3 w-30 p-3 text-center">
-            <div class="team-logo mt-2">
-                <img src="/assets/img/team-logo.png" alt="">
-            </div>
-            <div class="team-name mt-3">
-                <h5>Namek</h5>
-            </div>
-            <div class="team-stats mt-3 d-flex justify-content-between gap-2">
-                <div class="win d-flex w-100">
-                    <div class="badge-stats win-title bg-success w-75">
-                        <span class="fs-8 text-light w-100">Win</span>
-                    </div>
-                    <div class="win-number w-25">
-                        <span class="w-25">7</span>
-                    </div>
-                </div>
-                <div class="loss d-flex rounded w-100">
-                    <div class="badge-stats loss-title bg-danger w-75">
-                        <span class="fs-8 text-light">Loss</span>
-                    </div>
-                    <div class="loss-number w-25">
-                        <span>0</span>
-                    </div>
-                </div>
-                <div class="draw d-flex rounded w-100">
-                    <div class="badge-stats draw-title bg-warning w-75">
-                        <span class="fs-8 text-light">Draw</span>
-                    </div>
-                    <div class="draw-number w-25">
-                        <span>2</span>
-                    </div>
-                </div>
-            </div>
-            <div class="team-info bg-light d-flex flex-column mt-3">
-                <span>City : Youssoufia</span>
-                <span>Players : 5/11</span>
-                <span>Age : 16 - 28</span>
-            </div>
-        </div>
-
-        <div class="team-card bg-light rounded-3 w-30 p-3 text-center">
-            <div class="team-logo mt-2">
-                <img src="/assets/img/team-logo.png" alt="">
-            </div>
-            <div class="team-name mt-3">
-                <h5>Namek</h5>
-            </div>
-            <div class="team-stats mt-3 d-flex justify-content-between gap-2">
-                <div class="win d-flex w-100">
-                    <div class="badge-stats win-title bg-success w-75">
-                        <span class="fs-8 text-light w-100">Win</span>
-                    </div>
-                    <div class="win-number w-25">
-                        <span class="w-25">7</span>
-                    </div>
-                </div>
-                <div class="loss d-flex rounded w-100">
-                    <div class="badge-stats loss-title bg-danger w-75">
-                        <span class="fs-8 text-light">Loss</span>
-                    </div>
-                    <div class="loss-number w-25">
-                        <span>0</span>
-                    </div>
-                </div>
-                <div class="draw d-flex rounded w-100">
-                    <div class="badge-stats draw-title bg-warning w-75">
-                        <span class="fs-8 text-light">Draw</span>
-                    </div>
-                    <div class="draw-number w-25">
-                        <span>2</span>
-                    </div>
-                </div>
-            </div>
-            <div class="team-info bg-light d-flex flex-column mt-3">
-                <span>City : Youssoufia</span>
-                <span>Players : 5/11</span>
-                <span>Age : 16 - 28</span>
-            </div>
-        </div>
+    </a>
+        <?php endforeach; ?>
     </div>
 </div>
 <div class="secondary-content col-12 col-lg-3 ">
@@ -346,6 +118,6 @@
     </div>
 
     <div class="matchs bg-light rounded pb-3 mt-5 d-flex justify-content-center">
-        <a href="createTeam" class="btn btn-primary w-100">Create Team</a>
+        <a href="/addTeam" class="btn btn-primary w-100">Create Team</a>
     </div>
 </div>
