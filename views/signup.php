@@ -55,7 +55,7 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                                <?php echo $form->field($model, 'country'); ?>
+                                <?php echo $form->selectField($model, 'country', ['Morocco', 'Algeria', 'Mauritania', 'Libya', 'Tunisia', 'Egypt', 'Saudi Arabia']); ?>
                             </div>
                             <div class="col">
                                 <?php echo $form->field($model, 'city'); ?>
