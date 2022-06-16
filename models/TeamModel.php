@@ -11,8 +11,12 @@ class TeamModel extends DbModel
     public int $min_age = 0;
     public int $max_age = 0;
     public int $number_max_of_players = 11;
+    public string $country = '';
     public string $city = '';
     public string $postale_code = '';
+    public int $win = 0;
+    public int $loss = 0;
+    public int $draw = 0;
 
 
     public function tableName(): string
@@ -64,8 +68,13 @@ class TeamModel extends DbModel
             'min_age', 
             'max_age', 
             'number_max_of_players', 
+            'country',
             'city', 
-            'postale_code'];
+            'postale_code',
+            'win',
+            'loss',
+            'draw'
+        ];
     }
 
 }
