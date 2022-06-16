@@ -6,6 +6,7 @@ use app\core\Controller;
 use app\core\Application;
 use app\models\UserModel;
 use app\models\LoginModel;
+use app\models\PlayerModel;
 use app\models\TeamModel;
 
 class AdminController extends Controller
@@ -17,8 +18,13 @@ class AdminController extends Controller
         {
             $team = new TeamModel();
             $number_of_teams = $team->count();
+
+            $player = new PlayerModel();
+            $number_of_players = $player->count();
+
             return $this->render('dashboard', [
-                "number_of_teams" => $number_of_teams
+                "number_of_teams" => $number_of_teams,
+                "number_of_players" => $number_of_players
             ]); 
         }
         if ($role === 'user') 

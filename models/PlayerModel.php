@@ -42,6 +42,10 @@ class PlayerModel extends DbModel
     // {
     //     return parent::select($id);
     // }
+    public function count()
+    {
+        return parent::count();
+    }    
 
     public function save()
     {
