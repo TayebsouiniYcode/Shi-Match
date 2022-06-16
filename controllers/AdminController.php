@@ -3,9 +3,10 @@
 namespace app\controllers;
 use app\core\Request;
 use app\core\Controller;
-use app\core\Application;
 use app\models\UserModel;
-use app\models\LoginModel;
+use app\models\MatchModel;
+use app\models\PlayerModel;
+use app\models\TeamModel;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,25 @@ class AdminController extends Controller
         $role = $_SESSION['role'] ?? 'Guest';
         if ($role === 'admin') 
         {
-            return $this->render('dashboard'); 
+            $team = new TeamModel();
+            $number_of_teams = $team->count();
+
+            $player = new PlayerModel();
+            $number_of_players = $player->count();
+
+            $match = new MatchModel();
+            $number_of_matchs = $match->count();
+
+            $player->selectAll();
+            $players = $player->dataList;
+            
+
+            return $this->render('dashboard', [
+                "number_of_teams" => $number_of_teams,
+                "number_of_players" => $number_of_players,
+                "number_of_matchs" => $number_of_matchs,
+                'players' => $players
+            ]); 
         }
         if ($role === 'user') 
         {

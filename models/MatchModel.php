@@ -3,19 +3,16 @@
 namespace app\models;
 use app\core\DbModel;
 
-class PlayerModel extends DbModel
+class MatchModel extends DbModel
 {
     public int $id;
-    public string $post = '';
-    public string $favorite_foot = '';
-    public string $favorite_number = '';
-    public int $height = 0;
-    public int $weight = 0;
-    public int $fk_team = 0;
+    public string $date;
+    public int $number_of_goals;
+    
 
     public function tableName(): string
     {
-        return 'player_infos';
+        return 'matchs';
     }
 
     // public function updateUser()
@@ -59,7 +56,10 @@ class PlayerModel extends DbModel
 
     public function attributes(): array
     {
-        return ['post', 'favorite_foot', 'favorite_number', 'height', 'weight', 'fk_team'];
+        return [
+            'date',
+            'number_of_goals'
+        ];
     }
 
 }
