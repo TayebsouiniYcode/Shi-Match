@@ -2,6 +2,7 @@
     <h2>Create team</h2>
     <div class="create-team-form">
         <?php $form = app\core\form\Form::begin('', 'post'); ?>
+            <?php echo $form->field($model, 'ceated_by')->hiddenField(); ?>
             <?php echo $form->field($model, 'id')->hiddenField(); ?>
             <?php echo $form->field($model, 'image')->hiddenField(); ?>
             <div class="form-group">

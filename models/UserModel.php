@@ -1,7 +1,9 @@
 <?php
 
 namespace app\models;
+use PDO;
 use app\core\DbModel;
+use app\models\TeamModel;
 
 class UserModel extends DbModel
 {
@@ -26,6 +28,8 @@ class UserModel extends DbModel
     public string $city= '';
     public string $postale_code = '';
     public string $address = '';
+    //team infos
+    public ?TeamModel $team;
 
 
     public function tableName(): string
@@ -97,6 +101,25 @@ class UserModel extends DbModel
     public function attributes(): array
     {
         return ['firstname', 'lastname', 'email', 'password', 'status', 'age', 'phone', 'fk_role', 'fk_address'];
+    }
+
+    public function selectTeam(int $userId)
+    {
+        $tableName = 'teams';
+        $statement = self::prepare("SELECT DISTINCT t.id, t.name 
+                    FROM teams t, player_infos p, user_player u_p, users u 
+                    WHERE u_p.fk_user = $userId 
+                    AND u_p.fk_player = p.id 
+                    AND p.fk_team = t.id;
+        ");
+        $statement->execute();
+        $this->team->dataList = $statement->fetch(PDO::FETCH_OBJ);
+        return $this->team->dataList;
+    }
+    public function loadTeam(): void
+    {
+        $this->team = new TeamModel();
+        $this->team->loadData($this->selectTeam($_SESSION['id']));
     }
 
 }

@@ -64,6 +64,7 @@ class Field
 
         return $this;
     }
+
     public function dateField()
     {
         $this->type = self::TYPE_DATE;

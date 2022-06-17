@@ -14,8 +14,9 @@ class UserController extends Controller
         if($request->isGet()){
             $user->select($_SESSION['id']);
             $user->loadData($user->dataList);
+            $user->loadTeam();
             return $this->render('profile', [
-                'model' => $user
+                'user' => $user
             ]);
         }
 
