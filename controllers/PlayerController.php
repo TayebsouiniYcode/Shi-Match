@@ -33,10 +33,6 @@ class PlayerController extends Controller
             $playerId = $player->save();
             if ($player->validate() && $playerId) {
                 $user_player = new UserPlayerModel($playerId, $_SESSION['id']);
-                if ($user_player){
-                    echo "seccuss";
-                    exit;
-                }
                 Application::$app->response->redirect('/players');
                 return;
             }

@@ -46,7 +46,9 @@ class Request
         }
         if ($this->method() === 'post')
         {
-            $_POST['image'] = $_FILES['image']['name'] ?? $_POST['image'];
+            if (!isset($_FILES)) {
+                $_POST['image'] = $_FILES['image']['name'] ?? $_POST['image'];
+            }
             foreach($_POST as $key => $value)
             {
                 if(!empty($_FILES['image']['name']) && $key === 'image') {
