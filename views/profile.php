@@ -4,7 +4,7 @@
             <img class="player-image-cercle" src="/assets/img/player.jpg" alt="" width="200">
         </div>
         <div class="informations-header">
-            <h3 class="name">Tayeb SOUINI (<?php echo $user->team->name; ?>)</h3>
+            <h3 class="name">Tayeb SOUINI <a class="btn btn-primary" href="/teamDetails?id=<?php echo $user->team->id; ?>"> (<?php echo $user->team->name; ?>) </a></h3>
         </div>
     </div>
     <div class="informations mt-5 row">
