@@ -24,10 +24,11 @@ class UserController extends Controller
         {
             $user = new UserModel();
             $user->loadData($request->getBody());
+            $user->loadTeam();
             $user->password = $_SESSION['password'];
             $user->update($user->id);
             return $this->render('profile', [
-                'model' => $user
+                'user' => $user
             ]);
         }
     }

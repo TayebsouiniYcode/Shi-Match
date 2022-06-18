@@ -76,6 +76,7 @@ class AuthController extends Controller
                 Application::$app->response->redirect('/');
             }
 
+            $this->setLayout('auth');
             return $this->render('signup', [
                 'model' => $user
             ]);
