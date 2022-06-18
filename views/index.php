@@ -1,4 +1,4 @@
-<div class="header-section d-flex justify-content-around align-items-center mt-5">
+<div class="mt-5 header-section d-flex justify-content-around align-items-center">
     <div class="text">
         <h1 class="text-primary">
             Awsome sport
@@ -13,24 +13,30 @@
             <a class="btn btn-primary text-light" href="/signup">JOIN US</a>
         </div>
     </div>
-    <div class="image">
+    <div class="image d-none d-md-block">
         <img src="/assets/img/Header_1.png" alt="image" width="" height="400">
     </div>
 </div>
+<!-- <div class="services">
 
-<div class="section-about d-flex justify-content-around align-items-center mt-5">
+</div>
+<div class="vh-75 section-about d-flex justify-content-around align-items-center">
     <div class="image-about ms-5">
         <img src="/assets/img/about_1.png" alt="" width="250">
     </div>
     <div class="text-about w-40">
-        <h4 class="text-muted">
+        <h4 class="h2">
             WHO WE ARE
         </h4>
-        <p class="h3">
+        <p class="fs-5">
             roinde concepta rabie saeviore, quam desperatio incendebat et fames, amplificatis 
         </p>
-        <p>
+        <p class="text-muted">
             Spatium Innovation Hub is a thinking company on a mission to connect people and businesses with meaningful innovation, at scale.
         </p>
     </div>
-</div>
+</div> -->
+
+<?php
+    include '../views/layouts/decoration.php';
+?>
