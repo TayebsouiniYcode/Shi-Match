@@ -58,6 +58,10 @@ $app->router->get('/editTeam', [TeamController::class, 'edit']);
 $app->router->post('/editTeam', [TeamController::class, 'edit']);
 $app->router->post('/updateTeamImage', [TeamController::class, 'updateImage']);
 
+
+$app->router->get('/teamJoinRequest', [TeamController::class, 'joinRequest']);
+
+
 $app->router->get('/mtachRequest', [MatchController::class, 'create']);
 $app->router->post('/mtachRequest', [MatchController::class, 'create']);
 
