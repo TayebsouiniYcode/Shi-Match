@@ -3,18 +3,24 @@
 namespace app\models;
 use app\core\DbModel;
 
-class MatchModel extends DbModel
+class TeamMatchModel extends DbModel
 {
-    public int $id;
-    public string $date = '2020-01-01';
-    public int $number_of_goals = 0;
-    public string $status = 'en attente';
-    public string $time = "00:00";
+    public int $fk_team;
+    public int $fk_match;
     
+    public function __construct($fk_team, $fk_match)
+    {
+        $this->fk_team = $fk_team;
+        $this->fk_match = $fk_match;
+
+        $this->save();
+
+        return true;
+    }
 
     public function tableName(): string
     {
-        return 'matchs';
+        return 'team_match';
     }
 
     // public function updateUser()
@@ -59,10 +65,8 @@ class MatchModel extends DbModel
     public function attributes(): array
     {
         return [
-            'date',
-            'number_of_goals',
-            'status',
-            'time'
+            'fk_team',
+            'fk_match',
         ];
     }
 

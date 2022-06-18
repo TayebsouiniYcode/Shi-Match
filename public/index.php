@@ -59,6 +59,7 @@ $app->router->post('/editTeam', [TeamController::class, 'edit']);
 $app->router->post('/updateTeamImage', [TeamController::class, 'updateImage']);
 
 $app->router->get('/mtachRequest', [MatchController::class, 'create']);
+$app->router->post('/mtachRequest', [MatchController::class, 'create']);
 
 $app->router->get('/logout', [AuthController::class, 'logout']);
 
