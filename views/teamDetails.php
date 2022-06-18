@@ -39,6 +39,11 @@
                 <a class="btn bg-warning text-light" href="/editTeam?id=<?php echo $team->id;?>">Edit</a>
                 <a class="btn bg-danger text-light" href="/deleteTeam?id=<?php echo $team->id;?>">Delete</a>
             </div>
+            <?php else : ?>
+                <div class="mt-4 d-flex justify-content-end gap-3">
+                <a class="btn bg-warning text-light" href="/mtachRequest?<?php echo 'id='.$team->id .'&idVs=' . $_SESSION['teamId'];?>">Match Request</a>
+                <a class="btn bg-danger text-light" href="/bannerTeam?id=<?php echo $team->id;?>">Banner Team</a>
+            </div>
             <?php endif; ?>
             <p class="mt-4">
                 <!-- <strong>Matchs: </strong> <span>51</span>
