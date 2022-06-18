@@ -88,7 +88,6 @@ class TeamController extends Controller
     {
         $teamId =  $_POST['id'];
         $data = $request->getBody();
-        
         $team = new TeamModel();
 
         $team->select($teamId);
