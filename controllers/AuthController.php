@@ -24,19 +24,13 @@ class AuthController extends Controller
                 $role->select($user->fk_role);
                 $role->loadData($role->dataList);
                 $role->dataList = null;
-                // echo "<pre>";
-                // var_dump($role);
-                // echo "</pre>";
-                // exit;
-                // $role->loadData();
                 $user->role_name = $role->role_name;
-               // $user->loadTeam();
 
-               //charge l'équipe sur les session
-               $u = new UserModel();
-               $u->select($user->id);
-               $u->loadTeam();
-                session_start();
+                $u = new UserModel();
+                $u->select($user->id);
+                $u->loadTeam();
+
+                //session_start();
                 $_SESSION['email'] = $login->email;
                 $_SESSION['id'] = $user->id;
                 $_SESSION['password'] = $user->password;
@@ -46,7 +40,6 @@ class AuthController extends Controller
                 $_SESSION['teamId'] = $u->team->id;
 
                 if ($user->role_name === 'admin'){
-                    // Application::$app->session->sefFlash('success', 'Welcome');
                     Application::$app->response->redirect('/dashboard');
                     return;
                 }
@@ -55,7 +48,6 @@ class AuthController extends Controller
                     Application::$app->response->redirect('/profile');
                     return;
                 }
-                
             }
         }
         $this->setLayout('auth');

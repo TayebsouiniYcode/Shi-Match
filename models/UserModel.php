@@ -125,8 +125,10 @@ class UserModel extends DbModel
     }
     public function loadTeam(): void
     {
-        $this->team = new TeamModel();
-        $this->team->loadData($this->selectTeam($_SESSION['id']));
+        if (isset($_SESSION['id'])){
+            $this->team = new TeamModel();
+            $this->team->loadData($this->selectTeam($_SESSION['id']));
+        }
     }
 
 }

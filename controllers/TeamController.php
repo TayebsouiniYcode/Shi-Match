@@ -5,6 +5,7 @@ use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
 use app\models\TeamModel;
+use app\models\TeamRequestModel;
 
 class TeamController extends Controller
 {
@@ -25,6 +26,15 @@ class TeamController extends Controller
         $team->select($teamId);
         $team->loadData($team->dataList);
         $team->dataList = null;
+
+        $teamRequest = new TeamRequestModel();
+        $teamRequest->selectRequestByTeamId($team->id);
+        
+        $teamRequest->loadData($teamRequest->dataList);
+        echo "<pre>";
+        var_dump($teamRequest);
+        echo "</pre>";
+        exit;
         return $this->render('teamDetails', [
             'team' => $team
         ]); 
@@ -102,6 +112,29 @@ class TeamController extends Controller
         if ($request->isPost())
         {
 
+        }
+    }
+
+    public function joinRequest(Request $request)
+    {
+        if($request->isGet())
+        {
+            $userId = $_GET['userId'];
+            $teamId = $_GET['teamId'];
+            
+            $teamRequest = new TeamRequestModel();
+            $res = $teamRequest->createRequest($userId, $teamId);
+
+            if ($res) 
+            {
+                Application::$app->response->redirect('/teams');
+                return;
+            }
+
+            if (!$res) 
+            {
+                echo "some problems";
+            }
         }
     }
 }
