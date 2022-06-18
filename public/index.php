@@ -1,13 +1,14 @@
 <?php
 
-use app\controllers\SharedController;
 use app\core\Application;
 use app\controllers\AuthController;
-use app\controllers\AdminController;
-use app\controllers\HelperController;
 use app\controllers\TeamController;
-use app\controllers\PlayerController;
 use app\controllers\UserController;
+use app\controllers\AdminController;
+use app\controllers\MatchController;
+use app\controllers\HelperController;
+use app\controllers\PlayerController;
+use app\controllers\SharedController;
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -56,6 +57,8 @@ $app->router->post('/addTeam', [TeamController::class, 'create']);
 $app->router->get('/editTeam', [TeamController::class, 'edit']);
 $app->router->post('/editTeam', [TeamController::class, 'edit']);
 $app->router->post('/updateTeamImage', [TeamController::class, 'updateImage']);
+
+$app->router->get('/mtachRequest', [MatchController::class, 'create']);
 
 $app->router->get('/logout', [AuthController::class, 'logout']);
 

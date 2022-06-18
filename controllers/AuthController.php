@@ -30,6 +30,12 @@ class AuthController extends Controller
                 // exit;
                 // $role->loadData();
                 $user->role_name = $role->role_name;
+               // $user->loadTeam();
+
+               //charge l'équipe sur les session
+               $u = new UserModel();
+               $u->select($user->id);
+               $u->loadTeam();
                 session_start();
                 $_SESSION['email'] = $login->email;
                 $_SESSION['id'] = $user->id;
@@ -37,6 +43,7 @@ class AuthController extends Controller
                 $_SESSION['firstname'] = $user->firstname;
                 $_SESSION['lastname'] = $user->lastname;
                 $_SESSION['role'] = $user->role_name;
+                $_SESSION['teamId'] = $u->team->id;
 
                 if ($user->role_name === 'admin'){
                     // Application::$app->session->sefFlash('success', 'Welcome');

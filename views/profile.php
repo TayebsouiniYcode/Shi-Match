@@ -1,10 +1,16 @@
 <div class="profile bg-light rounded p-4 mt-5 mb-5">
     <div class="aside d-flex align-items-end flex-wrap gap-5 justify-content-center justify-content-md-start">
         <div class="profile-image">
-            <img class="player-image-cercle" src="/assets/img/player.jpg" alt="" width="200">
+            <img class="player-image-cercle" src="/assets/img/player.jpg" alt="" width="200" height="200">
         </div>
         <div class="informations-header">
-            <h3 class="name">Tayeb SOUINI <a class="btn btn-primary" href="/teamDetails?id=<?php echo $user->team->id; ?>"> (<?php echo $user->team->name; ?>) </a></h3>
+            <h3 class="name"><?php echo $user->firstname . ' ' . $user->lastname; ?>
+                <?php if ($user->team->id) : ?>
+                <a class="btn btn-primary" href="/teamDetails?id=<?php echo $user->team->id; ?>"> 
+                    <?php echo $user->team->name; ?>
+                </a>
+                <?php endif; ?>
+            </h3>
         </div>
     </div>
     <div class="informations mt-5 row">

@@ -105,16 +105,23 @@ class UserModel extends DbModel
 
     public function selectTeam(int $userId)
     {
-        $tableName = 'teams';
+        // $statement = self::prepare("SELECT DISTINCT t.id, t.name 
+        //             FROM teams t, player_infos p, user_player u_p, users u 
+        //             WHERE u_p.fk_user = $userId 
+        //             AND u_p.fk_player = p.id 
+        //             AND p.fk_team = t.id;
+        // ");
         $statement = self::prepare("SELECT DISTINCT t.id, t.name 
-                    FROM teams t, player_infos p, user_player u_p, users u 
-                    WHERE u_p.fk_user = $userId 
-                    AND u_p.fk_player = p.id 
-                    AND p.fk_team = t.id;
+                                FROM teams t
+                                WHERE t.created_by = $userId;
         ");
+        
         $statement->execute();
         $this->team->dataList = $statement->fetch(PDO::FETCH_OBJ);
-        return $this->team->dataList;
+        if ($this->team->dataList) {
+            return $this->team->dataList;
+        }
+        return ['team' => 'not found'];
     }
     public function loadTeam(): void
     {
