@@ -48,7 +48,7 @@
         {{content}}
     </div>
     <!-- Footer Start -->
-    <footer class="footer px-5 mt-5 text-light">
+    <!-- <footer class="footer px-5 mt-5 text-light pb-5">
         <div class="d-flex justify-content-between">
             <div class="footer-about w-30">
                 <h5 class="text-light pt-5">About Us</h5>
@@ -100,12 +100,7 @@
                 </form>
             </div>
         </div>
-        <!-- <div>
-            <p class="text-center fs-6">
-            Copyright  2020. Tayeb SOUINI. All Rights Reserved
-            </p>
-        </div> -->
-    </footer>
+    </footer> -->
     <!-- Footer End -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

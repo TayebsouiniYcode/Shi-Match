@@ -26,3 +26,45 @@
 .time {
   border-radius: 12px 12px 0px 0px;
 }
+
+.cercle-one {
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  left: 70%;
+  width: 14rem;
+  height: 20rem;
+  background-color: rgba(221, 247, 234);
+  border-radius: 50% 90%;
+}
+
+.decoration {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  color:rgba(221, 247, 234);
+}
+
+.cercle-box {
+  background-color:rgba(221, 247, 234);
+  width: 8px;
+  height: 8px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+/* .line {
+  position: absolute;
+  background-color: rgba(27, 128, 54, 0.5);
+  width: 45%;
+  height: 5px;
+  top: 80%;
+  left: 10%
+} */
+
+.shape {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  z-index: -1;
+}
