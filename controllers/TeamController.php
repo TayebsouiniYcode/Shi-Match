@@ -27,7 +27,14 @@ class TeamController extends Controller
         $team->loadData($team->dataList);
         $team->dataList = null;
 
-        $request = new TeamRequestModel();
+        $teamRequest = new TeamRequestModel();
+        $teamRequest->selectRequestByTeamId($team->id);
+        
+        $teamRequest->loadData($teamRequest->dataList);
+        echo "<pre>";
+        var_dump($teamRequest);
+        echo "</pre>";
+        exit;
         return $this->render('teamDetails', [
             'team' => $team
         ]); 

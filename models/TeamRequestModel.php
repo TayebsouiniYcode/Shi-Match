@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+use PDO;
 use app\core\DbModel;
 
 class TeamRequestModel extends DbModel
@@ -8,7 +9,7 @@ class TeamRequestModel extends DbModel
     public int $id;
     public int $fk_user;
     public int $fk_team;
-    public string $status;
+    public string $status = 'en attente';
 
     
     public function __construct()
@@ -20,8 +21,16 @@ class TeamRequestModel extends DbModel
     {
         $this->fk_team = $fk_team;
         $this->fk_user = $fk_user;
-        $this->status = 'en attente';
         $this->save();
+        return true;
+    }
+
+    public function selectRequestByTeamId($teamId)
+    {
+        $tableName = $this->tableName();
+        $statement = self::prepare("SELECT * FROM $tableName where fk_team = $teamId");
+        $statement->execute();
+        $this->dataList = $statement->fetchAll(PDO::FETCH_OBJ);
         return true;
     }
 
