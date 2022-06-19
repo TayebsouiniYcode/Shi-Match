@@ -16,7 +16,7 @@
 
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center" style="min-height: 100vh;">
-            <div class="w-75">
+            <div class="w-100">
                 <div class="bg-light rounded px-5">
                     <div class="d-flex flex-column align-items-center justify-content-center">
                         <h3 class="text-center mt-5">Add player</h3>
@@ -50,7 +50,13 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                                <?php echo $form->field($model, 'fk_team'); ?>
+                                <?php // echo $form->field($model, 'fk_team'); ?>
+                                <label for="fk_team" class="form-label">team</label>
+                                <select name="fk_team" id="fk_team" class="form-control">
+                                    <?php foreach($teams as $team) : ?>
+                                        <option value="<?php echo $team['id']; ?>"><?php echo $team['name']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                         </div>
                     </div>

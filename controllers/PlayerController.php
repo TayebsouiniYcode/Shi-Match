@@ -60,8 +60,11 @@ class PlayerController extends Controller
     {
         $player = new PlayerModel();
         if ($request->isGet()){
+            $team = new TeamModel();
+            $team->selectAll();
             return $this->render('addPlayer',  [
-                'model' => $player
+                'model' => $player,
+                'teams' => $team->dataList
             ]);
         }
         if ($request->isPost()) {
