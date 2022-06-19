@@ -1,18 +1,27 @@
 <?php
 
 namespace app\controllers;
-use app\core\Application;
-use app\core\Controller;
 use app\core\Request;
+use Dotenv\Util\Regex;
+use app\core\Controller;
+use app\core\Application;
+use app\models\UserModel;
 use app\models\PlayerModel;
 use app\models\UserPlayerModel;
-use Dotenv\Util\Regex;
 
 class PlayerController extends Controller
 {
     public function players(Request $request)
     {
-        return $this->render('players');
+        if ($request->isGet())
+        {
+            $users = new UserModel();
+            $users->selectAll();
+            return $this->render('players', [
+                'users' => $users
+            ]);
+        }
+
     }
 
     public function playerDetails(Request $request)
