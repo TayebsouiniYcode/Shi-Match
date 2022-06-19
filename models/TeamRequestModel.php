@@ -11,12 +11,6 @@ class TeamRequestModel extends DbModel
     public int $fk_team;
     public string $status = 'en attente';
 
-    
-    public function __construct()
-    {
-
-    }
-
     public function createRequest($fk_user, $fk_team)
     {
         $this->fk_team = $fk_team;
@@ -39,30 +33,26 @@ class TeamRequestModel extends DbModel
         return 'team_request';
     }
 
-    // public function updateUser()
-    // {
-    //     return parent::update();
-    // }
-
-    // public function selectAll()
-    // {
-    //     return parent::selectAll();
-    // }
-
-    public function findOne($where)
+    public function selectAll()
     {
-        return parent::findOne($where);
+        return parent::selectAll();
     }
 
-    // public function delete($id)
+    // public function findOne($where)
     // {
-    //     return parent::delete($id);
+    //     return parent::findOne($where);
     // }
 
-    // public function select($id)
-    // {
-    //     return parent::select($id);
-    // }
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
+    public function select($id)
+    {
+        return parent::select($id);
+    }
+    
     public function count()
     {
         return parent::count();

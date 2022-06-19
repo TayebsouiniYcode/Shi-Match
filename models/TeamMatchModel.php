@@ -23,15 +23,10 @@ class TeamMatchModel extends DbModel
         return 'team_match';
     }
 
-    // public function updateUser()
-    // {
-    //     return parent::update();
-    // }
-
-    // public function selectAll()
-    // {
-    //     return parent::selectAll();
-    // }
+    public function selectAll()
+    {
+        return parent::selectAll();
+    }
 
     public function findOne($where)
     {
