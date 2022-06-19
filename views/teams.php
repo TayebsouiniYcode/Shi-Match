@@ -3,7 +3,11 @@
 use app\models\TeamModel; 
 
 ?>
-<div class="primary-content  col-lg-12 col-12 ">
+<div class="primary-content col-lg-12 col-12">
+    
+    <div class="create-team mt-5">
+        <a class="btn btn-primary w-100" href="/addTeam">Create team</a>
+    </div>
     <div class="search-bar mt-5 p-3 bg-light rounded ">
         <form action="" >
             <div class="fields d-flex gap-3">

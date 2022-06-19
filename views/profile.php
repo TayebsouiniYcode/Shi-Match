@@ -37,6 +37,8 @@
             <div class="row">
             <?php $form = app\core\form\Form::begin('', "post"); ?>
                 <input type="hidden" name="id" value="<?php echo $user->id;?>">
+                <input type="hidden" name="fk_role" value="<?php echo $user->fk_role;?>">
+                <input type="hidden" name="fk_address" value="<?php echo $user->fk_address;?>">
                 <fieldset class="mt-3 col-md-12">
                     <legend class="text-muted">Personel</legend>
                     <div class="form-group d-flex justify-content-between gap-2">
