@@ -15,25 +15,21 @@ class RoleModel extends DbModel
         return 'roles';
     }
 
-    // public function updateUser()
-    // {
-    //     return parent::update();
-    // }
 
-    // public function selectAll()
-    // {
-    //     return parent::selectAll();
-    // }
+    public function selectAll()
+    {
+        return parent::selectAll();
+    }
 
     public function findOne($where)
     {
         return parent::findOne($where);
     }
 
-    // public function delete($id)
-    // {
-    //     return parent::delete($id);
-    // }
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
 
     public function select($id)
     {
