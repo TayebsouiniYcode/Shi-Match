@@ -3,17 +3,18 @@
 namespace app\controllers;
 use app\core\Request;
 use app\core\Controller;
+use app\models\TeamModel;
 use app\models\UserModel;
 use app\models\MatchModel;
 use app\models\PlayerModel;
-use app\models\TeamModel;
+use app\controllers\UserController;
 
 class AdminController extends Controller
 {
     public function dashboard(Request $request)
     {
-        $role = $_SESSION['role'] ?? 'Guest';
-        if ($role === 'admin') 
+        $role = $_SESSION['role'] ?? '';
+        if ($role === 'admin')
         {
             $team = new TeamModel();
             $number_of_teams = $team->count();
@@ -26,7 +27,6 @@ class AdminController extends Controller
 
             $player->selectAll();
             $players = $player->dataList;
-            
 
             return $this->render('dashboard', [
                 "number_of_teams" => $number_of_teams,
@@ -37,13 +37,15 @@ class AdminController extends Controller
         }
         if ($role === 'user') 
         {
-            $user = new UserModel();
-            $user->select($_SESSION['id']);
-            $user->loadData($user->dataList);
-            $user->dataList = null;
-            return $this->render('profile', [
-                'model' => $user
-            ]);
+            $userController = new UserController();
+            return $userController->profile($request);
+            // $user = new UserModel();
+            // $user->select($_SESSION['id']);
+            // $user->loadData($user->dataList);
+            // $user->dataList = null;
+            // return $this->render('profile', [
+            //     'user' => $user
+            // ]);
         }
         if ($role === 'Guest')
         {
