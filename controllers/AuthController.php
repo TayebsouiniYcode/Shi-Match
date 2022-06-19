@@ -19,7 +19,6 @@ class AuthController extends Controller
             $user = new UserModel();
             $user = $login->login();
             if ($login->validate() && $login->login()) {
-<<<<<<< Updated upstream
 
                 $role = new RoleModel();
                 $role->select($user->fk_role);
@@ -49,13 +48,6 @@ class AuthController extends Controller
                     Application::$app->response->redirect('/profile');
                     return;
                 }
-=======
-                session_start();
-                $_SESSION['email'] = $login->email;
-                Application::$app->session->sefFlash('success', 'Welcome');
-                Application::$app->response->redirect('/dashboard');
-                return;
->>>>>>> Stashed changes
             }
         }
         $this->setLayout('auth');
