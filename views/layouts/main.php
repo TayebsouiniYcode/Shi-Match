@@ -33,8 +33,10 @@
                         <h6 class="text-muted">Admin</h6>
                 </div> -->
                 <div class="navbar-nav w-100">
-                    <a href="/dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
+                    <?php if($_SESSION['role'] == 'admin') : ?>
+                        <a href="/dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <?php endif; ?>
+                    <div class="nav-item">
                         <a href="./players" class="nav-link"><i class="bi bi-people-fill me-2"></i>Players</a>
                     </div>
                     <div class="nav-item">
@@ -76,7 +78,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="/profile" class="dropdown-item">My Profile</a>
-                            <a href="/settings" class="dropdown-item">Settings</a>
+                            <!-- <a href="/settings" class="dropdown-item">Settings</a> -->
                             <a href="/logout" class="dropdown-item">Log Out</a>
                         </div>
                     </div>

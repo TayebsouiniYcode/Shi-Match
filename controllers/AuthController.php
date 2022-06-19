@@ -37,7 +37,7 @@ class AuthController extends Controller
                 $_SESSION['firstname'] = $user->firstname;
                 $_SESSION['lastname'] = $user->lastname;
                 $_SESSION['role'] = $user->role_name;
-                $_SESSION['teamId'] = $u->team->id;
+                $_SESSION['teamId'] = $u->team->id ?? -1;
 
                 if ($user->role_name === 'admin'){
                     Application::$app->response->redirect('/dashboard');

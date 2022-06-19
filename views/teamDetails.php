@@ -59,46 +59,22 @@
 </div>
 <div class="secondary-content col-12 col-lg-3 mt-5">
     <div class="top-rating bg-light rounded pb-3">
-        <div class="p-3">
-            <h3 class="text-center">Top rating</h3>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalid</span> <span>86%</span>  <span>Namek</span>
-            </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Azeddine</span> <span>85%</span>  <span>Aliens</span>
-            </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalil</span> <span>73%</span>  <span>Error 404</span>
-            </div>
-        </div>
-        <div class="boutons d-flex justify-content-center">
-            <a class="btn btn-primary" href="#">View all players</a>
+        <div class="p-3 text-center">
+            coming soon
         </div>
     </div>
 
 
     <div class="matchs bg-light rounded pb-3">
-        <div class="p-3 mt-5 ">
-            <h3 class="text-center">Matchs</h3>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalid</span> <span>25</span>  <span>Namek</span>
-            </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Azeddine</span> <span>23</span>  <span>Aliens</span>
-            </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalil</span> <span>19</span>  <span>Error 404</span>
-            </div>
-        </div>
-        <div class="boutons d-flex justify-content-center">
-            <a class="btn btn-primary" href="#">View all Matchs</a>
+        <div class="p-3 mt-5 text-center">
+                coming soon
         </div>
     </div>
 
-    <div class="action bg-light rounded p-3 mt-3 d-flex gap-3 justify-content-between">
+    <!-- <div class="action bg-light rounded p-3 mt-3 d-flex gap-3 justify-content-between">
         <button class="btn bg-warning text-light w-50">Ban</button>
         <button class="btn bg-danger text-light w-50">Delete</button>
-    </div>
+    </div> -->
 </div>
 
 
