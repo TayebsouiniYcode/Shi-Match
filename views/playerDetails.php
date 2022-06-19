@@ -1,10 +1,10 @@
 <div class="primary-content col-lg-9 col-12">
     <div class="player-card row bg-light">
         <div class="player-image col-12 col-md-4">
-            <img class="player-image-cercle" src="/assets/img/player.jpg" alt="" height="200">
+            <img class="player-image-cercle" src="/assets/img/player.jpg" alt="" height="200" width="200">
         </div>
         <div class="team-infos col-12 col-md-8">
-            <h2>Tayeb SOUINI <em>(27)</em></h2>
+            <h2><?php // echo $player->firstname . ' ' . $player->lastname; ?> <em>(27)</em></h2>
             <p class="mt-4">
                 <strong>Team: </strong> <span>Namek</span>
                 <br>
