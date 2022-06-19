@@ -7,6 +7,7 @@ use app\core\Controller;
 use app\core\Application;
 use app\models\UserModel;
 use app\models\PlayerModel;
+use app\models\TeamModel;
 use app\models\UserPlayerModel;
 
 class PlayerController extends Controller
@@ -26,7 +27,33 @@ class PlayerController extends Controller
 
     public function playerDetails(Request $request)
     {
-        return $this->render('playerDetails');
+        if ($request->isGet())
+        {
+            $userId = $_GET['id'];
+            $user = new UserModel();
+            $user->select($userId);
+            $user->loadData($user->dataList);
+
+            $player = new PlayerModel();
+            $player->getPlayerByUserId($userId);
+            if ($player->dataList){
+                $player->loadData($player->dataList);
+            }
+
+            $team = new TeamModel();
+            $team->select($player->fk_team);
+            if ($team->dataList) {
+                $team->loadData($team->dataList);
+            }
+            
+
+            return $this->render('playerDetails', [
+                'user' => $user,
+                'player' => $player,
+                'team' => $team
+            ]);
+        }
+        
     }
 
     public function addPlayer(Request $request)

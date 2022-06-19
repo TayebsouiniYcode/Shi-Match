@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+use PDO;
 use app\core\DbModel;
 
 class PlayerModel extends DbModel
@@ -60,6 +61,21 @@ class PlayerModel extends DbModel
     public function attributes(): array
     {
         return ['post', 'favorite_foot', 'favorite_number', 'height', 'weight', 'fk_team'];
+    }
+
+    public function getPlayerByUserId($userId)
+    {
+        $statement = self::prepare("SELECT * FROM player_infos p_i, user_player u_p
+                                    WHERE u_p.fk_user = $userId    
+                                    AND u_p.fk_player = p_i.id
+        ");
+        
+        $statement->execute();
+        $this->dataList = $statement->fetch(PDO::FETCH_OBJ);
+        if ($this->dataList) {
+            return $this->dataList;
+        }
+        return ['player' => 'player not found'];
     }
 
 }
