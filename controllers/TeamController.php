@@ -31,10 +31,6 @@ class TeamController extends Controller
         $teamRequest->selectRequestByTeamId($team->id);
         
         $teamRequest->loadData($teamRequest->dataList);
-        echo "<pre>";
-        var_dump($teamRequest);
-        echo "</pre>";
-        exit;
         return $this->render('teamDetails', [
             'team' => $team
         ]); 
