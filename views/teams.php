@@ -3,7 +3,7 @@
 use app\models\TeamModel; 
 
 ?>
-<div class="primary-content  col-lg-9 col-12 ">
+<div class="primary-content  col-lg-12 col-12 ">
     <div class="search-bar mt-5 p-3 bg-light rounded ">
         <form action="" >
             <div class="fields d-flex gap-3">
@@ -79,7 +79,7 @@ use app\models\TeamModel;
         <?php endforeach; ?>
     </div>
 </div>
-<div class="secondary-content col-12 col-lg-3 ">
+<!-- <div class="secondary-content col-12 col-lg-3 ">
     <div class="top-rating bg-light rounded pb-3">
         <div class="p-3 mt-5 ">
             <h3 class="text-center">Top rating</h3>
@@ -120,4 +120,4 @@ use app\models\TeamModel;
     <div class="matchs bg-light rounded pb-3 mt-5 d-flex justify-content-center">
         <a href="/addTeam" class="btn btn-primary w-100">Create Team</a>
     </div>
-</div>
+</div> -->
