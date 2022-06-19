@@ -20,7 +20,7 @@
                     <a href="/profile" class="nav-link">Edit profile</a>
                 </div>
                 <div class="">
-                    <a href="./notifications" class="nav-link">Notifications</a>
+                    <a href="./addPlayer" class="nav-link">player</a>
                 </div>
                 <div class="">
                     <a href="./editPassword" class="nav-link">Password & Security</a>
