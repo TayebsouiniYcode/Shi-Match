@@ -1,4 +1,4 @@
-<div class="primary-content  col-lg-9 col-12 ">
+<div class="primary-content  col-lg-12 col-12 ">
     <div class="search-bar mt-5 p-3 bg-light rounded ">
         <form action="" >
             <div class="fields d-flex gap-3">
@@ -32,137 +32,47 @@
                 <tr>
                     <th>Player</th>
                     <th>status</th>
-                    <th>Ratings</th>
-                    <th>Team</th>
-                    <th>Matchs</th>
+                    <th>age</th>
+                    <th>view</th>
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($users->dataList as $user) : ?>
                 <tr>
                     <td>
                         <div class="d-flex align-items-center">
                             <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
                             <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
+                                <p class="fw-bold mb-1"><?php echo $user['firstname'] . ' ' . $user['lastname']; ?></p>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <p class="fw-normal mb-1 dash-banned">banned</p>
+                        <?php if ($user['status'] == 0) :?>
+                            <p class="fw-normal mb-1 dash-banned">
+                                Banned
+                            </p>
+                        <?php elseif ($user['status'] == 1) : ?>
+                            <p class="fw-normal mb-1 dash-dtatus">
+                                Active
+                            </p>
+                        <?php endif; ?>
                     </td>
                     <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
+                        <p class="fw-normal mb-1 text-center">
+                            <?php echo $user['age']; ?>
+                        </p>
                     </td>
-                    <td>Namek</td>
                     <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
+                        <a class="text-dark text-decoration-none" href="/playerDetails<?php echo '?id=' . $user['id'];?>">profile</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-banned">banned</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 </div>
-<div class="secondary-content col-12 col-lg-3 ">
+<!-- <div class="secondary-content col-12 col-lg-3 ">
     <div class="top-rating bg-light rounded pb-3">
         <div class="p-3 mt-5 ">
             <h3 class="text-center">Top rating</h3>
@@ -199,4 +109,4 @@
             <a class="btn btn-primary" href="#">View all Matchs</a>
         </div>
     </div>
-</div>
+</div> -->
