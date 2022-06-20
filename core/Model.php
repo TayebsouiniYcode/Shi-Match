@@ -2,6 +2,9 @@
 
 namespace app\core;
 
+use FFI\Exception;
+use JetBrains\PhpStorm\ExpectedValues;
+
 abstract class Model
 {
     public const RULE_REQUIRED = 'required';
@@ -13,11 +16,16 @@ abstract class Model
 
     public function loadData($data)
     {
-        foreach($data as $key => $value) {
-            if(property_exists($this, $key)) {
-                $this->{$key} = $value;
+        try{
+            foreach($data as $key => $value) {
+                if(property_exists($this, $key)) {
+                    $this->{$key} = $value;
+                }
             }
+        } catch (Exception $e) {
+            echo "";
         }
+
     }
 
     abstract public function rules(): array;

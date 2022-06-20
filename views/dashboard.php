@@ -6,6 +6,7 @@
                 <span class="fs-6"><?php
 
 use app\models\PlayerModel;
+use app\models\UserModel;
 
  echo $number_of_players; ?></span>
                 <span class="fs-6-">Players</span>
@@ -41,14 +42,17 @@ use app\models\PlayerModel;
             </thead>
             <tbody>
                 <?php $player = new PlayerModel(); ?>
-                <?php foreach ($players as $value) : ?>
-                    <?php $player->loadData($value); ?>
+                <?php foreach ($users->dataList as $u) : ?>
+                    <?php
+                        $user = new app\models\UserModel(); 
+                        $user->loadData($u); 
+                    ?>
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
-                                <img src="/assets/img/<?php echo $player->image ?? 'player.jpg'; ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                <img src="/assets/img/<?php echo $user->image ?? 'player.jpg'; ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
                                 <div class="ms-3">
-                                    <p class="fw-bold mb-1"><?php echo $player->name ?? 'Not found'; ?></p>
+                                    <p class="fw-bold mb-1"><?php echo $user->firstname ?? 'Not found'; ?></p>
                                 </div>
                             </div>
                         </td>
