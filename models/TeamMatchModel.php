@@ -28,20 +28,16 @@ class TeamMatchModel extends DbModel
         return parent::selectAll();
     }
 
-    public function findOne($where)
+    public function delete($id)
     {
-        return parent::findOne($where);
+        return parent::delete($id);
     }
 
-    // public function delete($id)
-    // {
-    //     return parent::delete($id);
-    // }
-
-    // public function select($id)
-    // {
-    //     return parent::select($id);
-    // }
+    public function select($id)
+    {
+        return parent::select($id);
+    }
+    
     public function count()
     {
         return parent::count();
