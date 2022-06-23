@@ -7,13 +7,17 @@ use app\core\Controller;
 use app\core\Request;
 use app\models\User;
 use app\models\LoginModel;
+use app\models\UserModel;
 
 class HelperController extends Controller
 {
     public function index(Request $request)
     {
+        $user = new UserModel();
         $this->setLayout('landing');
-        return $this->render('index');
+        return $this->render('index', [
+            'model' => $user
+        ]);
     }
 
     public function welcomeYoucode(Request $request)
