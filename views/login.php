@@ -1,78 +1,118 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="./assets/style/main.css" rel="stylesheet">
-    <title>Shi-match</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - SportMatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-50 min-h-screen flex flex-col justify-center">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="text-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-600">Shi-match</a>
+            <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+                Connectez-vous à votre compte
+            </h2>
+            <p class="mt-2 text-sm text-gray-600">
+                Ou
+                <a href="/signup" class="font-medium text-blue-600 hover:text-blue-500">
+                    créez un nouveau compte
+                </a>
+            </p>
+        </div>
+    </div>
 
-<body>
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <form class="space-y-6" method="post" action"/login">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">
+                        Adresse email
+                    </label>
+                    <div class="mt-1">
+                        <input id="email" name="email" type="email" autocomplete="email" required
+                               class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                               placeholder="votre@email.com">
+                    </div>
+                </div>
 
-    <div class="container-fluid">
-        <div class="row align-items-center justify-content-center" style="min-height: 100vh;">
-            <div class="w-75">
-                <div class="bg-light rounded px-5">
-                    <?php $form = app\core\form\Form::begin('', "post"); ?>
-                    <div class="login d-flex justify-content-between">
-                        <div class="form w-40 d-flex flex-column justify-content-center">
-                            <div class="d-flex flex-column align-items-center justify-content-between">
-                                <h3 class="text-center mt-5">WELCOME BACK</h3>
-                                <h6 class="text-muted">
-                                    Welcome back! Please enter your details.
-                                </h6>
-                            </div>
-                            <?php echo $form->field($model, 'email'); ?>
-                            <?php echo $form->field($model, 'password')->passwordField(); ?>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">
+                        Mot de passe
+                    </label>
+                    <div class="mt-1">
+                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                               class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                               placeholder="••••••••">
+                    </div>
+                </div>
 
-                            <div class="form-group mt-2 d-flex justify-content-between">
-                                <div class="remember-me">
-                                    <input type="checkbox" name="rememberMe" id="rememberMe">
-                                    <label for="rememberMe" class="form-label">Remember me</label>
-                                </div>
-                                <div class="forgot-password">
-                                    <a href="#">Forgot password?</a>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100 mt-4">Sign in</button>
-                            <a href="#" class="btn btn-google w-100 mt-3">sign in with Google</a>
-                            <span class="text-center mt-2">Don't have an account? <a href="/signup">Sign up for free!</a></span>
-                        </div>
-                        <div class="image">
-                            <img src="/assets/img/Image-login.png" alt="" height="450">
-                        </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox"
+                               class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                            Se souvenir de moi
+                        </label>
                     </div>
 
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                            Mot de passe oublié ?
+                        </a>
+                    </div>
+                </div>
 
-                    <?php app\core\form\Form::end(); ?>
+                <div>
+                    <button type="submit"
+                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Se connecter
+                    </button>
+                </div>
+            </form>
 
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Ou continuer avec</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <div>
+                        <a href="#"
+                           class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            <span class="ml-2">Google</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="#"
+                           class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span class="ml-2">Facebook</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Sign In End -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <div class="mt-8 text-center">
+        <a href="/" class="text-blue-600 hover:text-blue-500 font-medium">
+            ← Retour à l'accueil
+        </a>
+    </div>
 </body>
-
-</html>
-
-<!-- Optional JavaScript; choose one of the two! -->
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-</body>
-
 </html>

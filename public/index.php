@@ -1,6 +1,7 @@
 <?php
 
 use app\core\Application;
+use app\core\Auth;
 use app\controllers\AuthController;
 use app\controllers\TeamController;
 use app\controllers\UserController;
@@ -44,14 +45,14 @@ $app->router->post('/signup', [
 ]);
 
 
-// admin routes
-$app->router->get('/dashboard', [
-    AdminController::class, 'dashboard'
-]);
+// Dashboard Routes
+$app->router->get('/dashboard', [AdminController::class, 'dashboard']);
+$app->router->get('/dashboard/findplayers', [AdminController::class, 'dashboardFindPlayer']);
+$app->router->get('/dashboard/mymatches', [AdminController::class, 'myMAtches']);
 
 
 // team routes
-$app->router->get('/teams', [
+$app->router->get('/dashboard/teams', [
     TeamController::class, 'index'
 ]);
 $app->router->get('/teamDetails', [
@@ -60,7 +61,7 @@ $app->router->get('/teamDetails', [
 $app->router->get('/deleteTeam', [
     TeamController::class, 'destroy'
 ]);
-$app->router->get('/addTeam', [
+$app->router->get('/dashboard/addTeam', [
     TeamController::class, 'create'
 ]);
 $app->router->post('/addTeam', [

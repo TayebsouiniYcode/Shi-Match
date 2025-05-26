@@ -18,7 +18,8 @@ class AuthController extends Controller
             $login->loadData($request->getBody());
             $user = new UserModel();
             $user = $login->login();
-            if ($login->validate() && $login->login()) {
+            //TODO Validation
+            if ($login->login()) {
 
                 $role = new RoleModel();
                 $role->select($user->fk_role);
@@ -39,13 +40,13 @@ class AuthController extends Controller
                 $_SESSION['role'] = $user->role_name;
                 $_SESSION['teamId'] = $u->team->id ?? -1;
 
-                if ($user->role_name === 'admin'){
+                if ($user->role_name === 'ROLE_ADMIN'){
                     Application::$app->response->redirect('/dashboard');
                     return;
                 }
 
-                if ($user->role_name === 'user'){
-                    Application::$app->response->redirect('/profile');
+                if ($user->role_name === 'ROLE_USER'){
+                    Application::$app->response->redirect('/dashboard');
                     return;
                 }
             }
@@ -62,8 +63,8 @@ class AuthController extends Controller
         if($request->isPost())
         {
             $user->loadData($request->getBody());
-
-            if ($user->validate() && $user->save()){
+            //TODO Validation backend
+            if ($user->save()){
                 Application::$app->session->sefFlash('success', 'Thanks for registreing');
                 Application::$app->response->redirect('/');
             }

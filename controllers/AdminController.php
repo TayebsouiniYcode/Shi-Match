@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function dashboard(Request $request)
     {
         $role = $_SESSION['role'] ?? '';
-        if ($role === 'admin')
+        if ($role === 'ROLE_ADMIN')
         {
             $team = new TeamModel();
             $number_of_teams = $team->count();
@@ -58,5 +58,13 @@ class AdminController extends Controller
                 'model' => $user
             ]); 
         }
+    }
+
+    public function dashboardFindPlayer() {
+        return $this->render('dashboard/find-players', []); 
+    }
+
+    public function myMatches() {
+        return $this->render('dashboard/my-matches', []); 
     }
 }

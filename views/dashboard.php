@@ -1,152 +1,191 @@
-<div class="primary-content col-10 col-lg-8 me-3">
-    <div class="statistiques mt-5 p-3 bg-light rounded ">
-        <h4>Statistiques</h4>
-        <div class="d-flex justify-content-between align-items-center mx-3">
-            <div class="players d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
-                <span class="fs-6"><?php
+<div class="flex-1 p-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Page header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+            <p class="mt-2 text-gray-600">Bienvenue sur votre tableau de bord SportMatch</p>
+        </div>
 
-use app\models\PlayerModel;
-use app\models\UserModel;
-
- echo $number_of_players; ?></span>
-                <span class="fs-6-">Players</span>
-            </div>
-            <div class="teams d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
-                <span class="fs-6"><?php echo $number_of_teams; ?></span>
-                <span class="fs-6">Teams</span>
-            </div>
-            <div class="matchs d-flex flex-column bg-primary w-30 px-4 py-2 text-light rounded">
-                <span class="fs-6-"><?php echo $number_of_matchs; ?></span>
-                <span class="fs-6-">Matchs</span>
+        <div class="mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="find-players.html" class="bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-lg transition-colors">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-semibold">Trouver des joueurs</h3>
+                            <p class="text-blue-100 text-sm">Découvrez de nouveaux partenaires</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="my-matches.html" class="bg-green-600 hover:bg-green-700 text-white p-6 rounded-lg transition-colors">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-semibold">Créer un match</h3>
+                            <p class="text-green-100 text-sm">Organisez une nouvelle session</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="my-groups.html" class="bg-purple-600 hover:bg-purple-700 text-white p-6 rounded-lg transition-colors">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-semibold">Rejoindre une equipe</h3>
+                            <p class="text-purple-100 text-sm">Intégrez une equipe de sport</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </div>
 
-    <div class="search-bar bg-light rounded d-flex justify-content-between mt-5 py-2 px-4">
-        <h3>All players</h3>
-        <form action="">
-            <input type="text" placeholder="Search player">
-        </form>
-    </div>
+        <!-- Stats cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Matches joués</dt>
+                                <dd class="text-lg font-medium text-gray-900">24</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="players-list my-5 bg-light rounded">
-        <table class="table align-middle mb-0 bg-white">
-            <thead class="bg-light">
-                <tr>
-                    <th>Player</th>
-                    <th>status</th>
-                    <th>Ratings</th>
-                    <th>Team</th>
-                    <th>Matchs</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $player = new PlayerModel(); ?>
-                <?php foreach ($users->dataList as $u) : ?>
-                    <?php
-                        $user = new app\models\UserModel(); 
-                        $user->loadData($u); 
-                    ?>
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="/assets/img/<?php echo $user->image ?? 'player.jpg'; ?>" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                                <div class="ms-3">
-                                    <p class="fw-bold mb-1"><?php echo $user->firstname ?? 'Not found'; ?></p>
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Matches à venir</dt>
+                                <dd class="text-lg font-medium text-gray-900">3</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Partenaires</dt>
+                                <dd class="text-lg font-medium text-gray-900">18</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Note moyenne</dt>
+                                <dd class="text-lg font-medium text-gray-900">4.8</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content area -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Recent matches -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">Matches récents</h3>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">⚽</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Football - Parc des Sports</p>
+                                    <p class="text-sm text-gray-500">Hier, 18h00</p>
                                 </div>
                             </div>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1 text-center">86%</p>
-                        </td>
-                        <td>Namek</td>
-                        <td>
-                            <p class="fw-normal mb-1 text-center">25</p>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                    <!-- <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
-                            </div>
+                            <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Terminé</span>
                         </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-dtatus">verified</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Tayeb</p>
+                        
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🏀</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Basketball - Gymnase Central</p>
+                                    <p class="text-sm text-gray-500">Lundi, 20h00</p>
+                                </div>
                             </div>
+                            <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Terminé</span>
                         </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 dash-banned">banned</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">86%</p>
-                    </td>
-                    <td>Namek</td>
-                    <td>
-                        <p class="fw-normal mb-1 text-center">25</p>
-                    </td>
-                </tr> -->
-            </tbody>
-        </table>
-    </div>
-</div>
-<div class="secondary-content col-10 col-lg-3">
-    <div class="top-rating bg-light rounded pb-3">
-        <div class="p-3 mt-5 ">
-            <h3 class="text-center">Top rating</h3>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalid</span> <span>86%</span> <span>Namek</span>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Azeddine</span> <span>85%</span> <span>Aliens</span>
-            </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalil</span> <span>73%</span> <span>Error 404</span>
-            </div>
-        </div>
-        <div class="boutons d-flex justify-content-center">
-            <a class="btn btn-primary" href="#">View all players</a>
-        </div>
-    </div>
 
-
-    <div class="matchs bg-light rounded pb-3">
-        <div class="p-3 mt-5 ">
-            <h3 class="text-center">Matchs</h3>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalid</span> <span>25</span> <span>Namek</span>
+            <!-- Upcoming matches -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">Prochains matches</h3>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🎾</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Tennis - Club de Tennis</p>
+                                    <p class="text-sm text-gray-500">Demain, 16h00</p>
+                                </div>
+                            </div>
+                            <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Confirmé</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">⚽</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Football - Stade Municipal</p>
+                                    <p class="text-sm text-gray-500">Samedi, 14h00</p>
+                                </div>
+                            </div>
+                            <span class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">En attente</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Azeddine</span> <span>23</span> <span>Aliens</span>
-            </div>
-            <div class="d-flex justify-content-between my-3">
-                <span>Khalil</span> <span>19</span> <span>Error 404</span>
-            </div>
-        </div>
-        <div class="boutons d-flex justify-content-center">
-            <a class="btn btn-primary" href="#">View all Matchs</a>
         </div>
     </div>
 </div>
