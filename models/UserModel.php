@@ -21,7 +21,7 @@ class UserModel extends DbModel
     public string $password = '';
     public string $confirmPassword = '';
     public string $role = '';
-    public int $fk_role = 2;
+    public int $fk_role = 1;
     public int $fk_address = 1;
     //address
     public string $country = '';
