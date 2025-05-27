@@ -20,14 +20,14 @@
                     </div>
                 </a>
                 
-                <a href="my-matches.html" class="bg-green-600 hover:bg-green-700 text-white p-6 rounded-lg transition-colors">
+                <a href="/dashboard/addTeam" class="bg-green-600 hover:bg-green-700 text-white p-6 rounded-lg transition-colors">
                     <div class="flex items-center">
                         <svg class="h-8 w-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                         <div>
-                            <h3 class="font-semibold">Créer un match</h3>
-                            <p class="text-green-100 text-sm">Organisez une nouvelle session</p>
+                            <h3 class="font-semibold">Créer une équipe</h3>
+                            <p class="text-green-100 text-sm">Créer votre équipe</p>
                         </div>
                     </div>
                 </a>

@@ -1,5 +1,5 @@
 <div class="flex-1 p-8">
-    <div class="max-w-4xl mx-auto">
+    <div class=" mx-auto">
         <!-- Page header -->
         <div class="mb-8">
             <div class="flex items-center mb-4">
@@ -32,7 +32,7 @@
                         
                         <div>
                             <label for="sport" class="block text-sm font-medium text-gray-700 mb-2">
-                                Sport *
+                                Sport  (not working now)
                             </label>
                             <select id="sport" name="sport" required
                                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
@@ -46,6 +46,36 @@
                                 <option value="badminton">Badminton</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <label for="minage" class="block text-sm font-medium text-gray-700 mb-2">
+                                Min age
+                            </label>
+                            <input id="minage" name="minage" type="number" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="18">
+                        </div>
+                        
+                        <div>
+                            <label for="maxage" class="block text-sm font-medium text-gray-700 mb-2">
+                                Min age
+                            </label>
+                            <input id="maxage" name="maxage" type="number" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="35">
+                        </div>
+                        
+                    </div>
+
+                    <div class="mt-6">
+                        <label for="quote" class="block text-sm font-medium text-gray-700 mb-2">
+                            Quote de l'équipe
+                        </label>
+                        <input id="quote" name="quote" type="text" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Hala Madrid !!!">    
                     </div>
                     
                     <div class="mt-6">

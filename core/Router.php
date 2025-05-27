@@ -46,7 +46,6 @@ class Router
 
         if(is_array($callback))
         {
-            //class to object
             Application::$app->controller = new $callback[0]();
             $callback[0] = Application::$app->controller;
         }

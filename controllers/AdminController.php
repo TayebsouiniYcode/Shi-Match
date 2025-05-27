@@ -41,13 +41,6 @@ class AdminController extends Controller
         {
             $userController = new UserController();
             return $userController->profile($request);
-            // $user = new UserModel();
-            // $user->select($_SESSION['id']);
-            // $user->loadData($user->dataList);
-            // $user->dataList = null;
-            // return $this->render('profile', [
-            //     'user' => $user
-            // ]);
         }
         if ($role === 'Guest')
         {

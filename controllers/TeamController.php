@@ -14,6 +14,7 @@ class TeamController extends Controller
         $team = new TeamModel();
         $team->selectAll();
         $teams = $team->dataList;
+        $this->setLayout("landing");
         return $this->render('teams', [
             'teams' => $teams
         ]);
