@@ -124,4 +124,8 @@ $app->router->get('/logout', [
     AuthController::class, 'logout'
 ]);
 
+
+// player roots
+$app->router->get('/dashboard/player', [PlayerController::class, 'index']);
+
 $app->run();
