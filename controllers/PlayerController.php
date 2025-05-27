@@ -12,6 +12,10 @@ use app\models\UserPlayerModel;
 
 class PlayerController extends Controller
 {
+    public function index(Request $request) {
+        return $this->render('/player/dashboard/dashboard-player');
+    }
+
     public function players(Request $request)
     {
         if ($request->isGet())

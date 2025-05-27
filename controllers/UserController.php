@@ -32,15 +32,4 @@ class UserController extends Controller
             ]);
         }
     }
-
-    // public function editPassword(Request $request)
-    // {
-    //     $user = new UserModel();
-
-    //     if ($request->isGet()){
-    //         $user->select($_SESSION['id']);
-    //         return $this->render('editPassword', ['model' => $user]);
-    //     }
-        
-    // }
 }

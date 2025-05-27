@@ -50,6 +50,6 @@ class Application
     public function logout()
     {
         $this->user = null;
-        $_SESSION['email'] = null;
+        session_destroy();
     }
 }

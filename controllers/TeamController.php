@@ -14,6 +14,7 @@ class TeamController extends Controller
         $team = new TeamModel();
         $team->selectAll();
         $teams = $team->dataList;
+        $this->setLayout("landing");
         return $this->render('teams', [
             'teams' => $teams
         ]);
@@ -47,11 +48,11 @@ class TeamController extends Controller
         }
 
         if ($request->isPost())
-        {
+        {  
             $team->loadData($request->getBody());
             $team->created_by = $_SESSION['id'];
-            if ($team->validate() && $team->save()) {
-                Application::$app->response->redirect('/teams');
+            if ($team->save()) {
+                Application::$app->response->redirect('/dashboard');
                 return;
             }
         }

@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function dashboard(Request $request)
     {
         $role = $_SESSION['role'] ?? '';
-        if ($role === 'admin')
+        if ($role === 'ROLE_ADMIN')
         {
             $team = new TeamModel();
             $number_of_teams = $team->count();
@@ -41,13 +41,6 @@ class AdminController extends Controller
         {
             $userController = new UserController();
             return $userController->profile($request);
-            // $user = new UserModel();
-            // $user->select($_SESSION['id']);
-            // $user->loadData($user->dataList);
-            // $user->dataList = null;
-            // return $this->render('profile', [
-            //     'user' => $user
-            // ]);
         }
         if ($role === 'Guest')
         {
@@ -58,5 +51,13 @@ class AdminController extends Controller
                 'model' => $user
             ]); 
         }
+    }
+
+    public function dashboardFindPlayer() {
+        return $this->render('dashboard/find-players', []); 
+    }
+
+    public function myMatches() {
+        return $this->render('dashboard/my-matches', []); 
     }
 }
