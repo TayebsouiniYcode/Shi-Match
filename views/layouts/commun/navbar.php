@@ -32,11 +32,16 @@
                     
                     <!-- Profil utilisateur avec dropdown -->
                     <div class="relative">
+                        <?php
+                            if (isset($_SESSION["id"])) {
+                        ?>
                         <button id="profileButton" class="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
                             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" 
                                  alt="Photo de profil" 
                                  class="w-8 h-8 rounded-full object-cover">
-                            <span class="text-sm font-medium text-gray-700">John Doe</span>
+                            <span class="text-sm font-medium text-gray-700">
+                                <?= $_SESSION["firstname"] . " " . $_SESSION["lastname"]; ?>
+                            </span>
                             <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="dropdownArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
@@ -45,6 +50,12 @@
                         <!-- Menu dropdown -->
                         <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50 opacity-0 invisible transform scale-95 transition-all duration-200 origin-top-right">
                             <div class="py-1">
+                                <div class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
+                                    <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
+                                    <?= $_SESSION['role'] ?>
+                            </div>
                                 <a href="/profile" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
                                     <svg class="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -66,6 +77,16 @@
                                 </a>
                             </div>
                         </div>
+                    <?php } else { ?>
+                           <a href="/login" 
+                            class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                            Connexion                     
+                        </a>                     
+                        <a href="/signup" 
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                            S'inscrire                     
+                        </a>  
+                    <?php } ?>
                     </div>
                 </div>
             </div>
@@ -122,3 +143,5 @@
             dropdownArrow.style.transform = 'rotate(0deg)';
         }
     </script>
+
+

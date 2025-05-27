@@ -15,7 +15,7 @@
 
         <!-- Form -->
         <div class="bg-white shadow rounded-lg">
-            <form class="p-8 space-y-8">
+            <form class="p-8 space-y-8" method="post" action="/addTeam">
                 <!-- Basic Information -->
                 <div>
                     <h3 class="text-lg font-medium text-gray-900 mb-6">Informations de base</h3>
@@ -70,6 +70,15 @@
                     </div>
 
                     <div class="mt-6">
+                        <label for="maxplayers" class="block text-sm font-medium text-gray-700 mb-2">
+                            Nombre maximum des joueurs
+                        </label>
+                        <input id="maxplayers" name="maxplayers" type="text" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="23">    
+                    </div>
+
+                    <div class="mt-6">
                         <label for="quote" class="block text-sm font-medium text-gray-700 mb-2">
                             Quote de l'équipe
                         </label>
@@ -78,58 +87,14 @@
                                     placeholder="Hala Madrid !!!">    
                     </div>
                     
-                    <div class="mt-6">
+                    <!-- <div class="mt-6">
                         <label for="description" class="block text-sm font-medium text-gray-700 mb-2">
                             Description de l'équipe
                         </label>
                         <textarea id="description" name="description" rows="4"
                                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                     placeholder="Décrivez votre équipe, votre style de jeu, vos objectifs..."></textarea>
-                    </div>
-                </div>
-
-                <!-- Team Settings -->
-                <div>
-                    <h3 class="text-lg font-medium text-gray-900 mb-6">Paramètres de l'équipe</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <label for="level" class="block text-sm font-medium text-gray-700 mb-2">
-                                Niveau de l'équipe *
-                            </label>
-                            <select id="level" name="level" required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                <option value="">Sélectionner</option>
-                                <option value="debutant">Débutant</option>
-                                <option value="intermediaire">Intermédiaire</option>
-                                <option value="avance">Avancé</option>
-                                <option value="expert">Expert</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="max-players" class="block text-sm font-medium text-gray-700 mb-2">
-                                Nombre max de joueurs *
-                            </label>
-                            <input id="max-players" name="max-players" type="number" min="2" max="30" required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    placeholder="11">
-                        </div>
-                        
-                        <div>
-                            <label for="age-range" class="block text-sm font-medium text-gray-700 mb-2">
-                                Tranche d'âge
-                            </label>
-                            <select id="age-range" name="age-range"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                <option value="">Toutes les tranches</option>
-                                <option value="16-25">16-25 ans</option>
-                                <option value="26-35">26-35 ans</option>
-                                <option value="36-45">36-45 ans</option>
-                                <option value="46+">46+ ans</option>
-                            </select>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Location -->
@@ -138,37 +103,37 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="city" class="block text-sm font-medium text-gray-700 mb-2">
-                                Ville *
+                            <label for="pays" class="block text-sm font-medium text-gray-700 mb-2">
+                                Pays *
                             </label>
-                            <input id="city" name="city" type="text" required
+                            <input id="pays" name="pays" type="text" required
                                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    placeholder="Paris">
+                                    placeholder="Maroc">
                         </div>
                         
                         <div>
-                            <label for="region" class="block text-sm font-medium text-gray-700 mb-2">
-                                Région/Département
+                            <label for="ville" class="block text-sm font-medium text-gray-700 mb-2">
+                                Ville
                             </label>
-                            <input id="region" name="region" type="text"
+                            <input id="ville" name="ville" type="text"
                                     class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                    placeholder="Île-de-France">
+                                    placeholder="Youssoufia">
                         </div>
                     </div>
                     
                     <div class="mt-6">
-                        <label for="training-location" class="block text-sm font-medium text-gray-700 mb-2">
-                            Lieu d'entraînement habituel
+                        <label for="zipcode" class="block text-sm font-medium text-gray-700 mb-2">
+                            code postale
                         </label>
-                        <input id="training-location" name="training-location" type="text"
+                        <input id="zipcode" name="zipcode" type="text"
                                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="Stade Municipal, 123 Rue du Sport, Paris">
+                                placeholder="46300">
                     </div>
                 </div>
 
                 <!-- Team Privacy -->
                 <div>
-                    <h3 class="text-lg font-medium text-gray-900 mb-6">Confidentialité</h3>
+                    <h3 class="text-lg font-medium text-gray-900 mb-6">Confidentialité (Comming soon)</h3>
                     
                     <div class="space-y-4">
                         <div class="flex items-start">
@@ -217,7 +182,7 @@
 
                 <!-- Initial Members -->
                 <div>
-                    <h3 class="text-lg font-medium text-gray-900 mb-6">Inviter des membres (optionnel)</h3>
+                    <h3 class="text-lg font-medium text-gray-900 mb-6">Inviter des membres (optionnel) (comming soon)</h3>
                     
                     <div class="space-y-4">
                         <div>
