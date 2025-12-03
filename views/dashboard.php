@@ -8,7 +8,7 @@
 
         <div class="mb-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <a href="find-players.html" class="bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-lg transition-colors">
+                <a href="/dashboard/findplayers" class="bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-lg transition-colors">
                     <div class="flex items-center">
                         <svg class="h-8 w-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>

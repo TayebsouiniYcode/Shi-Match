@@ -129,7 +129,7 @@
                 Créer mon compte gratuitement
             </a>
         </div>
-    </section>  
+    </section>
     
 <?php require_once './../views/layouts/commun/footer.php'; ?>
 

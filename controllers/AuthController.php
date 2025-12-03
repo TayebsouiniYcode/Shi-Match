@@ -8,6 +8,7 @@ use app\core\Response;
 use app\models\LoginModel;
 use app\models\RoleModel;
 use app\models\UserModel;
+use app\services\AuthService;
 
 class AuthController extends Controller
 {
@@ -74,6 +75,21 @@ class AuthController extends Controller
             $user->loadData($request->getBody());
             if ($user->save()){
                 Application::$app->session->sefFlash('success', 'Thanks for registreing');
+
+                $role = new RoleModel();
+                $role->select($user->fk_role);
+                $role->loadData($role->dataList);
+
+                if ($role->role_name === 'ROLE_ADMIN'){
+                    Application::$app->response->redirect('/dashboard');
+                    return;
+                }
+
+                if ($role->role_name === 'ROLE_USER'){
+                    Application::$app->response->redirect('/dashboard/player');
+                    return;
+                }
+
                 Application::$app->response->redirect('/');
             }
 
